@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <title>About Us - Neelkanth Interio</title>
+
+</head>
+<body>
+    <div id="app">
+
+        <!-- =========== HEADER (with Mobile Button) =========== -->
+        <header class="site-header">
+            <div class="container header-container">
+                <a href="/" class="logo">
+                    <img src="/logo.png" alt="Neelkanth Interio Logo" class="logo-image">
+                </a>
+                <nav class="main-navigation">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/portfolio.html">Portfolio</a></li>
+                        <li><a href="/design-tools.html">Design Tools</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                {/* === Mobile Menu Button === */}
+                <button class="mobile-menu-button" aria-label="Toggle Menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <main id="main-content">
+
+            <section class="page-header-section" style="background-color: var(--neutral-light); padding: 40px 0; text-align: center;" data-aos="fade-in">
+                <div class="container">
+                    <h1>About Neelkanth Interio</h1>
+                    <p style="font-size: 1.1rem; color: #555;">Discover our passion for design and our commitment to you.</p>
+                </div>
+            </section>
+
+            <section class="about-content-section">
+                <div class="container about-grid">
+                    <div class="about-text" data-aos="fade-right" data-aos-delay="100">
+                        <h2>Our Design Philosophy</h2>
+                        <p>At Neelkanth Interio, we believe exceptional design goes beyond aesthetics. It's about creating spaces that resonate with your personality, enhance your lifestyle, and provide lasting comfort and joy. We are dedicated to understanding your unique vision and translating it into a beautifully functional reality.</p>
+                        <p>Our approach is collaborative and client-focused. We guide you through every step, from initial concept development to final installation, ensuring a seamless and inspiring journey.</p>
+                        <h3>Mission & Vision</h3>
+                        <p><strong>Mission:</strong> To craft personalized, high-quality interior spaces that reflect our clients' dreams and enhance their daily lives.</p>
+                        <p><strong>Vision:</strong> To be the leading interior design firm known for creativity, integrity, and unwavering commitment to client satisfaction.</p>
+                    </div>
+                    <div class="about-image" data-aos="fade-left" data-aos-delay="200">
+                        <img src="/images/about-placeholder.jpg" alt="Neelkanth Interio design process or team">
+                    </div>
+                </div>
+            </section>
+
+            <section class="process-section" style="background-color: var(--neutral-light);" data-aos="fade-up">
+                <div class="container">
+                    <h2 class="text-center">Our Design Process</h2>
+                    <div class="process-steps">
+                        <div class="step" data-aos="fade-up" data-aos-delay="100">
+                            <div class="step-number">1</div>
+                            <h4>Consultation & Brief</h4>
+                            <p>We begin by listening – understanding your needs, style preferences, budget, and timeline.</p>
+                        </div>
+                        <div class="step" data-aos="fade-up" data-aos-delay="200">
+                            <div class="step-number">2</div>
+                            <h4>Concept & Design</h4>
+                            <p>We develop initial concepts, mood boards, layouts, and material palettes tailored to your brief.</p>
+                        </div>
+                        <div class="step" data-aos="fade-up" data-aos-delay="300">
+                            <div class="step-number">3</div>
+                            <h4>Development & Refinement</h4>
+                            <p>Detailed drawings, 3D visualizations (optional), and final selections are made based on your feedback.</p>
+                        </div>
+                        <div class="step" data-aos="fade-up" data-aos-delay="400">
+                             <div class="step-number">4</div>
+                            <h4>Execution & Management</h4>
+                            <p>We oversee procurement, coordinate with contractors, and manage the project implementation.</p>
+                        </div>
+                         <div class="step" data-aos="fade-up" data-aos-delay="500">
+                             <div class="step-number">5</div>
+                            <h4>Installation & Handover</h4>
+                            <p>Furniture installation, styling, and the final reveal of your beautifully transformed space.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+             <section class="team-section" data-aos="fade-up">
+                 <div class="container">
+                    <h2 class="text-center">Meet the Team</h2>
+                    <p class="text-center" style="max-width: 600px; margin: 0 auto 40px auto;">The creative minds behind Neelkanth Interio.</p>
+                    <div class="team-grid">
+                         <div class="team-member-card" data-aos="zoom-in" data-aos-delay="100">
+                             <img src="/images/team-placeholder-1.jpg" alt="Manish Gupta">
+                             <h4>Manish Gupta</h4>
+                             <p>Lead Designer</p>
+                         </div>
+                         <div class="team-member-card" data-aos="zoom-in" data-aos-delay="200">
+                              <img src="/images/team-placeholder-2.jpg" alt="Ritu Gupta">
+                             <h4>Ritu Gupta</h4>
+                             <p>Project Manager</p>
+                         </div>
+                    </div>
+                 </div>
+            </section>
+
+        </main>
+
+        <!-- =========== FOOTER (Same as other pages) =========== -->
+        <footer class="site-footer">
+            <div class="container">
+                <p>© 2023 Neelkanth Interio. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">i</a>
+                    <a href="#" aria-label="LinkedIn">l</a>
+                </div>
+            </div>
+        </footer>
+
+    </div> <!-- End of #app -->
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

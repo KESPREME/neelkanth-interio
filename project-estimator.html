@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <title>Project Estimator - Neelkanth Interio</title>
+
+</head>
+<body>
+    <div id="app">
+
+        <!-- =========== HEADER (with Mobile Button) =========== -->
+        <header class="site-header">
+            <div class="container header-container">
+                <a href="/" class="logo">
+                    <img src="/logo.png" alt="Neelkanth Interio Logo" class="logo-image">
+                </a>
+                <nav class="main-navigation">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/portfolio.html">Portfolio</a></li>
+                        <li><a href="/design-tools.html">Design Tools</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="mobile-menu-button" aria-label="Toggle Menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- =========== MAIN CONTENT (Unique to Estimator Page) =========== -->
+        <main id="main-content">
+
+             <section class="page-header-section" style="background-color: var(--neutral-light); padding: 40px 0; text-align: center;" data-aos="fade-in">
+                <div class="container">
+                    <h1>Project Estimator</h1>
+                    <p style="font-size: 1.1rem; color: #555; max-width: 700px; margin: 0 auto;">Get a conceptual budget range for your project. Fill out the details below.</p>
+                    <p style="font-size: 0.9rem; color: red; margin-top: 15px;"><strong>Disclaimer:</strong> This tool provides a very rough estimate for planning purposes only. Actual project costs vary based on specific selections, site conditions, and market factors. A detailed consultation is required for an accurate quote.</p>
+                </div>
+            </section>
+
+            <!-- Estimator Form Section -->
+            <section class="estimator-form-section" data-aos="fade-up">
+                <div class="container" style="max-width: 800px;"> 
+                    <form id="estimator-form" class="estimator-form" name="estimator" method="POST">
+                        
+                        <input type="hidden" name="form-name" value="estimator" />
+
+                        <h3 style="margin-bottom: 20px; text-align: center;">Project Details</h3>
+
+                        <div class="estimator-grid">
+                            <div class="form-group">
+                                <label for="room-type">Room Type / Project Scope:</label>
+                                <select id="room-type" name="room_type" required>
+                                    <option value="" disabled selected>Select an option...</option>
+                                    <option value="living_room">Living Room</option>
+                                    <option value="kitchen_remodel">Kitchen Remodel</option>
+                                    <option value="bathroom_remodel">Bathroom Remodel</option>
+                                    <option value="bedroom">Bedroom</option>
+                                    <option value="home_office">Home Office</option>
+                                    <option value="full_home_decor">Full Home (Decor Only)</option>
+                                    <option value="full_home_renovation">Full Home (Renovation)</option>
+                                    <option value="other">Other (Specify below)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="room-size">Approximate Size (Sq. Ft.):</label>
+                                <select id="room-size" name="room_size" required>
+                                     <option value="" disabled selected>Select a range...</option>
+                                    <option value="under_150">Under 150 sq ft</option>
+                                    <option value="150_300">150 - 300 sq ft</option>
+                                    <option value="300_500">300 - 500 sq ft</option>
+                                    <option value="500_1000">500 - 1000 sq ft</option>
+                                    <option value="1000_plus">1000+ sq ft</option>
+                                    <option value="full_home">Full Home (N/A)</option>
+                                </select>
+                            </div>
+
+                             <div class="form-group">
+                                <label for="project-scope">Desired Scope:</label>
+                                <select id="project-scope" name="project_scope" required>
+                                     <option value="" disabled selected>Select scope...</option>
+                                    <option value="decor_furniture">Decor & Furniture Only</option>
+                                    <option value="minor_reno">Minor Renovation (Paint, Fixtures)</option>
+                                    <option value="major_reno">Major Renovation (Layout Changes, Walls)</option>
+                                    <option value="gut_reno">Full Gut Renovation</option>
+                                     <option value="new_build">New Build Consultation</option>
+                                </select>
+                            </div>
+
+                             <div class="form-group">
+                                <label for="quality-level">Desired Quality Level:</label>
+                                <select id="quality-level" name="quality_level" required>
+                                    <option value="" disabled selected>Select quality...</option>
+                                    <option value="standard">Standard / Budget-Friendly</option>
+                                    <option value="mid_range">Mid-Range / Quality</option>
+                                    <option value="premium">Premium / High-End</option>
+                                    <option value="luxury">Luxury / Bespoke</option>
+                                </select>
+                            </div>
+                        </div> 
+
+                        <div class="form-group">
+                             <label for="additional-info">Additional Information (Optional):</label>
+                            <textarea id="additional-info" name="additional_info" rows="4" placeholder="Tell us a bit more about your project or specific needs..."></textarea>
+                        </div>
+
+                         <hr style="margin: 30px 0;">
+
+                         <h3 style="margin-bottom: 20px; text-align: center;">Your Contact Information</h3>
+                         <p style="text-align: center; font-size: 0.9rem; margin-bottom: 20px;">We'll use this to follow up regarding your estimate request.</p>
+
+                         <div class="estimator-grid"> 
+                             <div class="form-group">
+                                <label for="est-name">Name:</label>
+                                <input type="text" id="est-name" name="name" required>
+                             </div>
+                              <div class="form-group">
+                                <label for="est-email">Email:</label>
+                                <input type="email" id="est-email" name="email" required>
+                            </div>
+                             <div class="form-group">
+                                <label for="est-phone">Phone (Optional):</label>
+                                <input type="tel" id="est-phone" name="phone">
+                            </div>
+                             <div class="form-group">
+                                <label for="est-preferred-contact">Preferred Contact Method:</label>
+                                <select id="est-preferred-contact" name="preferred_contact">
+                                    <option value="email">Email</option>
+                                    <option value="phone">Phone</option>
+                                </select>
+                            </div>
+                         </div>
+
+                        <div class="form-group text-center" style="margin-top: 30px;">
+                             <p style="font-size: 0.9rem; color: #555; margin-bottom: 15px;">By submitting, you acknowledge this is for a rough estimate only. We will contact you to schedule a detailed consultation for an accurate quote.</p>
+                            <button type="submit" class="button estimator-submit-button">Request Estimate</button>
+                        </div>
+                         <div id="estimator-form-status" class="form-status text-center"></div> 
+
+                    </form>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- =========== FOOTER (Same as other pages) =========== -->
+        <footer class="site-footer">
+            <div class="container">
+                <p>© 2023 Neelkanth Interio. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">i</a>
+                    <a href="#" aria-label="LinkedIn">l</a>
+                </div>
+            </div>
+        </footer>
+
+    </div> <!-- End of #app -->
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

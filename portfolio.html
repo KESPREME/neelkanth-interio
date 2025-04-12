@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <title>Our Portfolio - Neelkanth Interio</title>
+
+</head>
+<body>
+    <div id="app">
+
+        <!-- =========== HEADER (with Mobile Button) =========== -->
+        <header class="site-header">
+            <div class="container header-container">
+                <a href="/" class="logo">
+                    <img src="/logo.png" alt="Neelkanth Interio Logo" class="logo-image">
+                </a>
+                <nav class="main-navigation">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/portfolio.html">Portfolio</a></li>
+                        <li><a href="/design-tools.html">Design Tools</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="mobile-menu-button" aria-label="Toggle Menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <main id="main-content">
+
+            <section class="page-header-section" style="background-color: var(--neutral-light); padding: 40px 0; text-align: center;" data-aos="fade-in">
+                <div class="container">
+                    <h1>Our Work</h1>
+                    <p style="font-size: 1.1rem; color: #555;">Explore a selection of our completed interior design projects.</p>
+                </div>
+            </section>
+
+            <section class="portfolio-filter-section" style="padding-top: 40px; padding-bottom: 20px;" data-aos="fade-up">
+                <div class="container">
+                    <div class="filter-controls">
+                        <span style="margin-right: 15px; font-weight: bold;">Filter by Style:</span>
+                        <button class="filter-button active" data-filter="all">All</button>
+                        <button class="filter-button" data-filter="modern">Modern</button>
+                        <button class="filter-button" data-filter="minimalist">Minimalist</button>
+                        <button class="filter-button" data-filter="traditional">Traditional</button>
+                        <button class="filter-button" data-filter="boho">Boho Chic</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="portfolio-listing-section" style="padding-top: 20px;">
+                <div class="container">
+                    
+                    <div class="portfolio-items-grid">
+
+                        <div class="portfolio-item-card" data-category="modern" data-aos="fade-up" data-aos-delay="100">
+                            <a href="/portfolio-detail-modern-apt.html">
+                                <img src="/images/portfolio-modern-apt.jpg" alt="Modern Apartment Living Room">
+                                <div class="portfolio-item-caption">
+                                    <h4>Modern City Apartment</h4>
+                                    <p>Living Room / Modern</p>
+                                </div>
+                            </a>
+                        </div>
+
+                         <div class="portfolio-item-card" data-category="minimalist" data-aos="fade-up" data-aos-delay="200">
+                            <a href="/portfolio-detail-minimalist-studio.html">
+                                <img src="/images/portfolio-minimalist-studio.jpg" alt="Minimalist Studio Space">
+                                <div class="portfolio-item-caption">
+                                    <h4>Minimalist Studio</h4>
+                                    <p>Studio / Minimalist</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="portfolio-item-card" data-category="traditional" data-aos="fade-up" data-aos-delay="300">
+                            <a href="/portfolio-detail-traditional-home.html">
+                                <img src="/images/portfolio-traditional-home.jpg" alt="Traditional Home Dining Room">
+                                <div class="portfolio-item-caption">
+                                    <h4>Classic Traditional Home</h4>
+                                    <p>Dining Room / Traditional</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="portfolio-item-card" data-category="modern" data-aos="fade-up" data-aos-delay="100"> 
+                            <a href="/portfolio-detail-luxury-villa.html">
+                                <img src="/images/portfolio-luxury-villa.jpg" alt="Luxury Villa Kitchen">
+                                <div class="portfolio-item-caption">
+                                    <h4>Luxury Villa Kitchen</h4>
+                                    <p>Kitchen / Modern</p>
+                                </div>
+                            </a>
+                        </div>
+
+                         <div class="portfolio-item-card" data-category="boho" data-aos="fade-up" data-aos-delay="200">
+                            <a href="/portfolio-detail-boho-bedroom.html">
+                                <img src="/images/portfolio-boho-bedroom.jpg" alt="Boho Chic Bedroom">
+                                <div class="portfolio-item-caption">
+                                    <h4>Boho Chic Bedroom</h4>
+                                    <p>Bedroom / Boho Chic</p>
+                                </div>
+                            </a>
+                        </div>
+
+                         <div class="portfolio-item-card" data-category="minimalist" data-aos="fade-up" data-aos-delay="300">
+                            <a href="/portfolio-detail-scandi-living.html">
+                                <img src="/images/portfolio-scandi-living.jpg" alt="Scandinavian Living Room">
+                                <div class="portfolio-item-caption">
+                                    <h4>Scandinavian Living</h4>
+                                    <p>Living Room / Minimalist</p>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- =========== FOOTER (Same as other pages) =========== -->
+        <footer class="site-footer">
+            <div class="container">
+                <p>© 2023 Neelkanth Interio. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">i</a>
+                    <a href="#" aria-label="LinkedIn">l</a>
+                </div>
+            </div>
+        </footer>
+
+    </div> <!-- End of #app -->
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

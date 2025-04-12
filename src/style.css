@@ -1,0 +1,1617 @@
+/* ==========================================================================
+   1. CSS Reset & Base Variables
+   ========================================================================== */
+
+/* Simple Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Variables for Neelkanth Interio */
+:root {
+    /* Color Palette - REPLACE with your actual brand colors */
+    --primary-color: #0a4f6e;   /* Example: Deep Blue */
+    --secondary-color: #1cb3c8; /* Example: Teal */
+    --accent-color: #f0ad4e;    /* Example: Gold/Yellow */
+    --neutral-light: #f8f9fa;   /* Very Light Gray */
+    --neutral-medium: #e9ecef;  /* Light Gray */
+    --neutral-dark: #343a40;    /* Dark Gray */
+    --text-dark: #212529;       /* Primary Text Dark */
+    --text-light: #f8f9fa;      /* Primary Text Light */
+    --white: #ffffff;
+    --black: #000000;
+
+    /* Font Families */
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Playfair Display', serif;
+
+    /* Remove default Vite dark/light mode colors */
+    color-scheme: light; /* Force light mode for simplicity */
+}
+
+img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+}
+
+/* ==========================================================================
+   2. Global Styles (Body, Typography, Links, Buttons, Container)
+   ========================================================================== */
+
+body {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--white); /* Set base background */
+    -webkit-font-smoothing: antialiased; /* Keep smooth fonts */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-secondary);
+    margin-bottom: 0.75em;
+    line-height: 1.2;
+    font-weight: 700; /* Match Google Font weight */
+    color: var(--text-dark); /* Default heading color */
+}
+
+/* Specific heading sizes */
+h1 { font-size: 3rem; } /* Base H1 size */
+h2 { font-size: 2.5rem; } /* Section titles */
+h3 { font-size: 1.75rem; } /* Card titles etc. */
+h4 { font-size: 1.3rem; } /* Smaller headings */
+/* Add H5, H6 if needed */
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* Global Button Style */
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-family: var(--font-primary); /* Ensure button uses body font */
+    font-weight: bold;
+    text-decoration: none; /* Remove underline from buttons */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background-color: var(--secondary-color);
+    text-decoration: none; /* Keep underline off on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Container utility */
+.container {
+    width: 90%; /* More responsive width */
+    max-width: 1140px; /* Common max-width */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px; /* Gutters */
+    padding-right: 15px;
+}
+
+/* Text alignment utility */
+.text-center {
+   text-align: center;
+}
+
+/* ==========================================================================
+   3. App Container (#app) - Adjusting Vite Defaults
+   ========================================================================== */
+
+#app {
+    /* Override Vite's default padding and text-align if needed */
+    /* max-width: 1280px; /* Keep or adjust */
+    /* margin: 0 auto; /* Keep */
+    padding: 0; /* Remove default padding to allow full-width sections */
+    text-align: left; /* Reset default centering */
+
+    /* We removed the default Vite background/color from :root,
+       so #app doesn't need specific color/background overrides unless
+       you want the app area itself to be different from the body */
+}
+
+/* ==========================================================================
+   4. Site Header & Navigation
+   ========================================================================== */
+
+.site-header {
+    background-color: var(--white);
+    padding: 10px 0; /* Slightly less padding */
+    border-bottom: 1px solid var(--neutral-medium);
+    position: sticky; /* Keep header sticky */
+    top: 0;
+    z-index: 1000; /* High z-index */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-image { /* Target the image specifically */
+    max-height: 50px; /* Control logo size */
+    width: auto;
+}
+
+.main-navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Space between nav items */
+}
+
+.main-navigation a {
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 10px 0; /* Increase clickable area */
+    position: relative;
+    text-decoration: none; /* Ensure no underline */
+}
+
+.main-navigation a:hover {
+    color: var(--primary-color);
+    text-decoration: none; /* No underline on hover */
+}
+
+/* Underline effect for nav items */
+.main-navigation a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0; /* Position underline below text */
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.main-navigation a:hover::after {
+   width: 100%;
+}
+
+/* ==========================================================================
+   5. Main Content Sections (Homepage)
+   ========================================================================== */
+
+/* --- General Section Styling --- */
+section {
+    padding: 80px 0; /* Consistent vertical padding */
+    /* border-bottom: 1px solid var(--neutral-medium); /* Optional separator */
+}
+section:last-of-type {
+    border-bottom: none;
+}
+
+
+/* --- Hero Section --- */
+.hero-section {
+    background-color: var(--neutral-dark);
+     /* Make sure hero-background.jpg is in public/images/ */
+    background-image: url('/images/hero-background.jpg');
+    background-size: cover;
+    background-position: center center;
+    padding: 150px 0; /* Generous padding */
+    color: var(--white);
+    text-align: center;
+    position: relative;
+    margin-top: 0; /* Remove any potential top margin */
+}
+
+.hero-section::before { /* Dark overlay */
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
+    z-index: 1;
+}
+
+.hero-section .container { /* Use .hero-content for specificity if needed */
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h1 {
+    color: var(--white);
+    font-size: 3.5rem; /* Adjust size as needed */
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 35px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9; /* Slight transparency for subtext */
+}
+
+.hero-button {
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.hero-button:hover {
+     background-color: #d89a3b; /* Darker accent */
+     color: var(--black);
+     transform: translateY(-2px) scale(1.02); /* Add scale */
+}
+
+
+/* --- Introduction Section --- */
+.intro-section {
+    text-align: center;
+    background-color: var(--white); /* Ensure white background if alternating */
+}
+.intro-section h2 {
+    margin-bottom: 20px;
+}
+.intro-text {
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #555; /* Slightly lighter text for intro */
+}
+
+
+/* --- Services Preview Section --- */
+.services-preview-section {
+     background-color: var(--neutral-light); /* Alternate background */
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+}
+
+.service-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.service-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.service-card p {
+    font-size: 1rem;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.service-card a {
+    font-weight: bold;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+.service-card a:hover {
+     text-decoration: underline;
+}
+
+
+/* --- Portfolio Preview Section --- */
+.portfolio-preview-section {
+     /* Keep default background or set one */
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.portfolio-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+.portfolio-card:hover {
+     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-card:hover img {
+    transform: scale(1.08);
+}
+
+.portfolio-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 10%, rgba(0,0,0,0.5) 60%, transparent);
+    color: var(--white);
+    padding: 50px 25px 25px 25px;
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly lower */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.portfolio-card:hover .portfolio-card-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.portfolio-card-overlay h4 {
+    color: var(--white);
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+    font-weight: 700; /* Ensure heading weight */
+}
+.portfolio-card-overlay p {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 0;
+    text-decoration: none; /* Ensure no underline */
+}
+
+
+/* --- Testimonials Section --- */
+.testimonials-section {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.testimonials-section h2 {
+    color: var(--white);
+}
+
+.testimonial {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.testimonial blockquote {
+    font-family: var(--font-secondary); /* Use heading font for quote? */
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    quotes: "“" "”";
+    color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+}
+.testimonial blockquote::before { content: open-quote; margin-right: 0.1em; }
+.testimonial blockquote::after { content: close-quote; margin-left: 0.1em;}
+
+.testimonial cite {
+    font-family: var(--font-primary);
+    font-weight: bold;
+    font-style: normal;
+    font-size: 1rem;
+    color: var(--accent-color); /* Accent color for name */
+}
+
+.testimonial-slider {
+    position: relative;
+    /* JS will handle showing/hiding testimonials */
+}
+
+
+/* --- Call to Action Section --- */
+.cta-section {
+    background-color: var(--neutral-medium); /* Use a light neutral background */
+    padding: 80px 0;
+    text-align: center; /* Center content */
+}
+
+.cta-section h2 {
+   color: var(--primary-color); /* Use primary color for heading */
+   margin-bottom: 15px;
+}
+.cta-section p {
+    color: var(--text-dark);
+    font-size: 1.15rem;
+    margin-bottom: 35px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cta-button {
+    background-color: var(--accent-color); /* Use accent color */
+    color: var(--text-dark);
+    padding: 15px 40px;
+    font-size: 1.1rem;
+}
+ .cta-button:hover {
+    background-color: #d89a3b; /* Darker accent */
+    color: var(--black);
+    transform: translateY(-2px) scale(1.02);
+ }
+
+/* ==========================================================================
+   6. Site Footer
+   ========================================================================== */
+
+.site-footer {
+    background-color: var(--neutral-dark);
+    color: var(--text-light);
+    padding: 50px 0;
+    margin-top: 0; /* Remove default margin if sections handle spacing */
+    text-align: center;
+}
+
+.site-footer .container {
+    /* Add specific footer layout styles if needed (e.g., flexbox) */
+}
+
+.site-footer p { /* Copyright */
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.social-links a {
+    color: var(--text-light);
+    margin: 0 12px;
+    font-size: 1.3rem; /* Adjust if using icon fonts */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block; /* Allows transform */
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   7. Responsive Adjustments (Example)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+
+    .hero-section { padding: 100px 0; }
+    .hero-section h1 { font-size: 2.8rem; }
+    .hero-section p { font-size: 1.1rem; }
+
+    section { padding: 60px 0; }
+
+    .main-navigation { /* Hide desktop nav on mobile - needs JS for toggle */
+        display: none;
+    }
+    .header-container {
+       /* Add styles for mobile menu button positioning if you add one */
+    }
+
+    .services-grid, .portfolio-grid {
+       grid-template-columns: 1fr; /* Stack cards on smaller screens */
+       gap: 25px;
+    }
+}
+
+/* Add more specific breakpoints and styles as needed */
+/* ==========================================================================
+   8. About Page Specific Styles
+   ========================================================================== */
+
+   .page-header-section h1 {
+    margin-bottom: 10px; /* Less margin below page title */
+}
+
+/* --- About Content Section --- */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 50px; /* Space between text and image */
+    align-items: center; /* Vertically align items */
+}
+
+.about-text h2 {
+    text-align: left; /* Override centered h2 if needed */
+    margin-bottom: 20px;
+}
+.about-text h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+.about-text p {
+    margin-bottom: 15px;
+    line-height: 1.7; /* Slightly more line height for readability */
+}
+
+.about-image img {
+    border-radius: 8px; /* Optional rounded corners */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1); /* Optional shadow */
+}
+
+/* --- Process Section --- */
+.process-steps {
+    display: grid;
+    /* Adjust columns for different screen sizes maybe */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.step {
+    /* Add padding/background if desired */
+}
+
+.step-number {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.step h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.step p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+
+/* --- Team Section (Optional) --- */
+.team-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+     gap: 30px;
+     text-align: center;
+}
+.team-member-card img {
+    width: 150px; /* Adjust size */
+    height: 150px;
+    border-radius: 50%; /* Circular images */
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--neutral-medium);
+}
+.team-member-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+.team-member-card p {
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* --- Responsive Adjustments for About Page --- */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr; /* Stack image and text */
+        gap: 30px;
+        text-align: center; /* Center text when stacked */
+    }
+    .about-text h2 {
+        text-align: center; /* Center heading when stacked */
+    }
+    .about-image {
+         order: -1; /* Move image above text on mobile */
+         max-width: 80%; /* Don't let image take full width */
+         margin: 0 auto 30px auto; /* Center image */
+    }
+
+     .process-steps {
+        grid-template-columns: 1fr; /* Stack steps */
+    }
+}
+/* ==========================================================================
+   9. Services Page Specific Styles
+   ========================================================================== */
+
+   .service-detail-section .container {
+    /* Container for all service items */
+}
+
+.service-item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Image and text columns */
+    gap: 50px; /* Space between image and text */
+    align-items: center;
+    margin-bottom: 80px; /* Space between different service blocks */
+    padding-bottom: 40px; /* Space before optional border */
+    border-bottom: 1px solid var(--neutral-medium); /* Separator line */
+}
+.service-item:last-child {
+    margin-bottom: 0;
+    border-bottom: none; /* Remove border from last item */
+    padding-bottom: 0;
+}
+
+/* Style for alternating layout (image right, text left) */
+/* Applied to every second .service-item */
+.service-item:nth-child(even) .service-image {
+    order: 2; /* Move image to the right column */
+}
+.service-item:nth-child(even) .service-description {
+    order: 1; /* Move description to the left column */
+}
+
+
+.service-image img {
+    width: 100%;
+    height: auto;
+    max-height: 450px; /* Limit image height */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.service-description h2 {
+    text-align: left; /* Override general center alignment */
+    margin-bottom: 15px;
+    font-size: 2rem; /* Slightly smaller than page title */
+    color: var(--primary-color);
+}
+
+.service-description p {
+    margin-bottom: 25px;
+    line-height: 1.7;
+    color: #444; /* Slightly darker text for description */
+}
+
+.service-description h4 {
+    font-size: 1.2rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+    font-family: var(--font-primary); /* Maybe use primary font for this heading? */
+    font-weight: bold;
+}
+
+.service-description ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+
+.service-description ul li {
+    padding-left: 25px; /* Indentation */
+    position: relative;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Custom bullet point */
+.service-description ul li::before {
+    content: '✓'; /* Checkmark or other symbol */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent-color); /* Use accent color for bullet */
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.service-cta {
+    /* Style the button specifically if needed */
+    margin-top: 10px;
+}
+
+
+/* --- Responsive Adjustments for Services Page --- */
+@media (max-width: 992px) { /* Adjust breakpoint if needed */
+     .service-item {
+        grid-template-columns: 1fr; /* Stack image and text */
+        gap: 30px;
+    }
+     /* Ensure image order is consistent when stacked */
+     .service-item .service-image,
+     .service-item:nth-child(even) .service-image {
+        order: 1; /* Image always first */
+    }
+    .service-item .service-description,
+    .service-item:nth-child(even) .service-description {
+        order: 2; /* Description always second */
+    }
+    .service-description h2 {
+        text-align: center; /* Center heading when stacked */
+    }
+}
+/* ==========================================================================
+   10. Portfolio Page Specific Styles
+   ========================================================================== */
+
+/* --- Filter Controls --- */
+.filter-controls {
+  text-align: center; /* Center filter buttons */
+  margin-bottom: 30px;
+}
+
+.filter-button {
+  background-color: transparent;
+  color: var(--text-dark);
+  border: 1px solid var(--neutral-medium);
+  padding: 8px 18px;
+  margin: 0 5px 10px 5px; /* Allow wrapping */
+  border-radius: 20px; /* Pill shape */
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-button:hover {
+  background-color: var(--neutral-light);
+  border-color: var(--neutral-dark);
+  color: var(--primary-color);
+  text-decoration: none; /* Override general link hover */
+  transform: none; /* Override general button hover */
+}
+
+.filter-button.active { /* Style for the active filter */
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-color: var(--primary-color);
+}
+
+
+/* --- Portfolio Grid --- */
+.portfolio-items-grid {
+  display: grid;
+  /* Using auto-fit for responsiveness */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px; /* Adjust gap as needed */
+}
+
+.portfolio-item-card {
+  background-color: var(--white);
+  border-radius: 8px;
+  overflow: hidden; /* Clip image corners */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Make the whole card clickable via the link */
+.portfolio-item-card a {
+  display: block;
+  text-decoration: none;
+  color: inherit; /* Inherit text color */
+}
+.portfolio-item-card a:hover {
+  text-decoration: none; /* No underline on image/caption hover */
+}
+
+
+.portfolio-item-card img {
+  width: 100%;
+  height: 250px; /* Adjust height as needed */
+  object-fit: cover;
+  display: block; /* Remove extra space */
+}
+
+.portfolio-item-caption {
+  padding: 15px 20px;
+  background-color: var(--white);
+}
+
+.portfolio-item-caption h4 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: var(--text-dark);
+   /* Optional: Truncate long titles */
+  /* white-space: nowrap; */
+  /* overflow: hidden; */
+  /* text-overflow: ellipsis; */
+}
+
+.portfolio-item-caption p {
+  font-size: 0.9rem;
+  color: #666; /* Lighter text for category/room */
+  margin-bottom: 0;
+}
+
+/* Add styles for filtering animation later if using JS */
+.portfolio-item-card.hide {
+  display: none; /* Simple hide/show for now */
+}
+
+
+/* --- Responsive Adjustments for Portfolio Page --- */
+@media (max-width: 480px) {
+   .portfolio-items-grid {
+      /* Stack on very small screens if 300px is too wide */
+      grid-template-columns: 1fr;
+  }
+  .filter-controls {
+      text-align: left; /* Align buttons left on small screens */
+  }
+   .filter-button {
+      display: block; /* Make buttons stack */
+      width: 100%;
+      margin: 0 0 10px 0; /* Adjust margin for stacked buttons */
+      text-align: center;
+  }
+  .filter-controls span { /* Hide or adjust the "Filter by Style:" text */
+      display: block;
+      margin-bottom: 10px;
+      text-align: center;
+  }
+}
+/* ==========================================================================
+   11. Contact Page Specific Styles
+   ========================================================================== */
+
+   .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Info column slightly smaller */
+    gap: 60px; /* Wider gap */
+    align-items: start; /* Align items to the top */
+}
+
+/* --- Contact Info Column --- */
+.contact-info h3 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+.contact-info p {
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+.contact-info ul {
+    list-style: none;
+    padding-left: 0;
+}
+.contact-info li {
+    margin-bottom: 20px;
+    padding-left: 30px; /* Space for icon */
+    position: relative;
+}
+.contact-info li strong {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-dark);
+    /* Add icon styles here later */
+}
+.contact-info li address,
+.contact-info li p {
+    margin-bottom: 0; /* Remove bottom margin from address/p inside li */
+    font-style: normal; /* Reset address italics */
+    line-height: 1.5;
+    color: #555;
+}
+.contact-info li a {
+    text-decoration: underline; /* Underline links in contact info */
+    color: var(--primary-color);
+}
+.contact-info li a:hover {
+    color: var(--secondary-color);
+}
+/* Add styles for icons (.icon-phone etc.) if using an icon font */
+/* .contact-info li i { */
+/*    position: absolute; */
+/*    left: 0; */
+/*    top: 2px; */
+/*    font-size: 1.2rem; */
+/*    color: var(--accent-color); */
+/* } */
+
+
+/* --- Contact Form Column --- */
+.contact-form-container h3 {
+     margin-bottom: 20px;
+     color: var(--primary-color);
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--neutral-medium);
+    border-radius: 5px;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resize only */
+    min-height: 120px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(var(--rgb-primary-color, 10, 79, 110), 0.2); /* Add focus ring */
+}
+
+.contact-submit-button {
+    padding: 12px 30px; /* Adjust padding */
+    width: auto; /* Don't make button full width by default */
+}
+
+.form-status { /* For JS feedback */
+    margin-top: 15px;
+    font-weight: bold;
+}
+.form-status.success { color: green; }
+.form-status.error { color: red; }
+
+
+/* --- Map Section --- */
+.map-embed iframe {
+    display: block; /* Remove extra space below iframe */
+    border-radius: 8px; /* Optional rounded corners */
+}
+
+/* --- Responsive Adjustments for Contact Page --- */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Stack columns */
+        gap: 40px;
+    }
+}
+@media (max-width: 768px) {
+     .contact-grid {
+        gap: 30px;
+    }
+    .contact-info li {
+        padding-left: 0; /* Remove padding if not using icons */
+    }
+    /* Hide icons maybe? */
+    /* .contact-info li i { display: none; } */
+}
+/* ==========================================================================
+   12. Portfolio Detail Page Styles
+   ========================================================================== */
+
+/* --- Portfolio Detail Header --- */
+.portfolio-detail-header {
+  text-align: center;
+}
+.portfolio-detail-header h1 {
+  margin-bottom: 10px;
+}
+/* Optional Breadcrumbs */
+.breadcrumb {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+.breadcrumb-item {
+  display: inline-block;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "/"; /* Separator */
+  padding: 0 8px;
+  color: #ccc;
+}
+.breadcrumb-item a {
+  color: #666;
+  text-decoration: none;
+}
+.breadcrumb-item a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+.breadcrumb-item.active {
+  color: var(--text-dark);
+  font-weight: 500;
+}
+.project-meta {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 10px;
+}
+.project-meta span {
+  margin: 0 5px;
+}
+.project-meta strong {
+   color: var(--text-dark);
+}
+
+
+/* --- Portfolio Detail Content Grid --- */
+.portfolio-detail-content .content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Main content wider than sidebar */
+  gap: 50px;
+  align-items: start;
+}
+
+.project-description h2 {
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+}
+.project-description h3 {
+  font-size: 1.4rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: var(--secondary-color);
+}
+.project-description p {
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+.project-description ul {
+  list-style: disc; /* Use standard bullets */
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.project-description ul li {
+  margin-bottom: 8px;
+}
+
+.project-sidebar {
+  background-color: var(--neutral-light);
+  padding: 30px;
+  border-radius: 8px;
+  position: sticky; /* Make sidebar sticky */
+  top: 100px; /* Adjust based on header height + desired space */
+}
+.project-sidebar h4 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+.project-sidebar p {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+
+/* --- Portfolio Gallery --- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 250px; /* Adjust height */
+  object-fit: cover;
+  border-radius: 5px;
+  transition: opacity 0.3s ease;
+  display: block;
+}
+.gallery-item a { /* For lightbox links */
+  display: block;
+}
+.gallery-item a:hover img {
+  opacity: 0.85; /* Slight fade on hover */
+}
+/* Add styles for your chosen lightbox library if you use one */
+/* e.g., .lightbox-overlay, .lightbox-container */
+
+
+/* --- Portfolio Navigation --- */
+.portfolio-navigation {
+   border-top: 1px solid var(--neutral-medium);
+   padding-top: 40px;
+}
+
+.portfolio-nav-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.portfolio-nav-flex .nav-link {
+  font-weight: bold;
+  color: var(--primary-color);
+  text-decoration: none;
+  padding: 10px; /* Clickable area */
+}
+.portfolio-nav-flex .nav-link.all {
+  color: var(--text-dark);
+  font-weight: normal;
+}
+.portfolio-nav-flex .nav-link:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+
+/* --- Responsive Adjustments for Portfolio Detail --- */
+@media (max-width: 992px) {
+  .portfolio-detail-content .content-grid {
+      grid-template-columns: 1fr; /* Stack description and sidebar */
+      gap: 40px;
+  }
+  .project-sidebar {
+      position: static; /* Unstick sidebar when stacked */
+      margin-top: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .gallery-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+  }
+   .gallery-item img {
+      height: 200px;
+  }
+   .portfolio-nav-flex {
+      flex-direction: column; /* Stack nav links */
+      gap: 15px;
+  }
+}
+/* ==========================================================================
+   13. Mobile Navigation Styles
+   ========================================================================== */
+
+   .mobile-menu-button {
+    display: none; /* Hidden by default on larger screens */
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 1001; /* Ensure button is above nav */
+}
+
+.mobile-menu-button .hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-dark);
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* --- Styles for Mobile Screens --- */
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+
+    .mobile-menu-button {
+        display: block; /* Show button on smaller screens */
+    }
+
+    .main-navigation {
+        /* Position the menu off-screen or hidden initially */
+        position: fixed; /* Or absolute relative to header */
+        top: 0;
+        right: -100%; /* Start off-screen to the right */
+        width: 80%; /* Or adjust width */
+        max-width: 300px;
+        height: 100vh; /* Full height */
+        background-color: var(--neutral-dark); /* Dark background for mobile nav */
+        padding: 80px 30px 30px 30px; /* Adjust padding */
+        box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+        transition: right 0.4s ease-in-out; /* Smooth slide-in */
+        z-index: 1000; /* Below the button but above content */
+        overflow-y: auto; /* Allow scrolling if many links */
+    }
+
+    .main-navigation.is-active {
+        right: 0; /* Slide menu into view */
+    }
+
+    .main-navigation ul {
+        display: flex;
+        flex-direction: column; /* Stack links vertically */
+        gap: 0; /* Reset gap for vertical layout */
+        align-items: flex-start; /* Align links to the left */
+    }
+
+    .main-navigation li {
+        width: 100%; /* Make list items full width */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Separator */
+    }
+     .main-navigation li:last-child {
+         border-bottom: none;
+     }
+
+
+    .main-navigation a {
+        display: block; /* Make link fill the list item */
+        padding: 15px 0; /* Vertical padding */
+        color: var(--text-light); /* Light text on dark background */
+        font-size: 1.1rem;
+        width: 100%;
+    }
+     .main-navigation a:hover {
+        color: var(--accent-color); /* Accent color on hover */
+        background-color: rgba(255, 255, 255, 0.05); /* Subtle hover background */
+     }
+     /* Remove underline effect on mobile */
+     .main-navigation a::after {
+         display: none;
+     }
+
+    /* --- Animate Hamburger Icon to 'X' when active --- */
+    .mobile-menu-button.is-active .hamburger-line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .mobile-menu-button.is-active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+    .mobile-menu-button.is-active .hamburger-line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+     /* Optional: Change X color when active and nav is dark */
+    /* .mobile-menu-button.is-active .hamburger-line {
+        background-color: var(--white);
+    } */
+
+} /* End of @media query */
+/* ==========================================================================
+   14. Design Tools Page Styles
+   ========================================================================== */
+
+   .design-tools-listing .container {
+    /* Add specific container styles if needed */
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+    margin-top: 40px; /* Space below page header */
+}
+
+.tool-card { /* Similar styling to service-card */
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 30px; /* More space for button */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Use flexbox for better alignment */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: space-between; /* Pushes button to bottom */
+}
+
+.tool-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.tool-card img {
+    width: 100%;
+    height: 200px; /* Consistent image height */
+    object-fit: cover;
+}
+
+.tool-card h3 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    padding: 0 15px; /* Padding for heading */
+}
+
+.tool-card p {
+    font-size: 1rem;
+    padding: 0 20px;
+    margin-bottom: 25px; /* Space above button */
+    color: #555;
+    line-height: 1.5;
+    flex-grow: 1; /* Allows description to take available space */
+}
+
+.tool-card .button { /* Target button inside card */
+    margin-left: 20px; /* Side margin */
+    margin-right: 20px;
+    width: calc(100% - 40px); /* Button width minus margins */
+}
+
+/* --- Responsive Adjustments for Design Tools --- */
+@media (max-width: 768px) {
+     .tools-grid {
+        gap: 25px;
+    }
+}
+/* ==========================================================================
+   15. Style Quiz Page Styles
+   ========================================================================== */
+
+   .quiz-container-section .container {
+    max-width: 900px; /* Limit width for better focus */
+}
+
+.quiz-step {
+    display: none; /* Hide all steps by default */
+    animation: fadeIn 0.5s ease-in-out; /* Simple fade-in */
+}
+
+.quiz-step.active {
+    display: block; /* Show the current active step */
+}
+
+.quiz-question {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.8rem; /* Adjust question size */
+}
+
+.quiz-options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 30px;
+}
+
+.quiz-option {
+    border: 2px solid var(--neutral-medium);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Clip image corners */
+    background-color: var(--white);
+}
+
+.quiz-option:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-option img {
+    width: 100%;
+    height: 200px; /* Adjust image height */
+    object-fit: cover;
+    display: block;
+}
+
+.quiz-option p {
+    padding: 15px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 0; /* Remove default p margin */
+}
+
+/* Add a subtle fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* ==========================================================================
+   16. Inspiration Board Page Styles
+   ========================================================================== */
+
+   .inspiration-category {
+    margin-bottom: 60px; /* Space between categories */
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--neutral-medium);
+}
+.inspiration-category:last-of-type {
+    border-bottom: none; /* Remove border from last category */
+     margin-bottom: 0;
+}
+
+
+.inspiration-category h2 {
+    text-align: left; /* Align category titles left */
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent-color); /* Accent underline */
+    display: inline-block; /* Make border only as wide as text */
+}
+
+.inspiration-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Smaller minmax for more items */
+    gap: 20px;
+}
+
+.inspiration-item {
+    border: 1px solid var(--neutral-light); /* Subtle border */
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: var(--white);
+    transition: box-shadow 0.3s ease;
+}
+.inspiration-item:hover {
+     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+
+.inspiration-item img {
+    width: 100%;
+    height: 180px; /* Adjust height */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+.inspiration-item:hover img {
+     transform: scale(1.03); /* Slight zoom on hover */
+}
+
+.inspiration-item p {
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+    background-color: var(--neutral-light); /* Background for caption */
+    margin: 0;
+}
+
+/* --- Responsive Adjustments for Inspiration Board --- */
+@media (max-width: 480px) {
+    .inspiration-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Even smaller items */
+        gap: 15px;
+    }
+    .inspiration-item img {
+        height: 130px;
+    }
+}
+/* ==========================================================================
+   17. Estimator Page Styles
+   ========================================================================== */
+
+   .estimator-form-section .container {
+    /* Keep max-width defined inline or here */
+}
+
+.estimator-form h3 {
+    color: var(--primary-color);
+}
+
+.estimator-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive 2-column grid */
+    gap: 20px 30px; /* Row gap, Column gap */
+    margin-bottom: 20px;
+}
+
+.estimator-form .form-group {
+    margin-bottom: 15px; /* Consistent spacing */
+}
+
+.estimator-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+/* Style all input types similarly */
+.estimator-form input[type="text"],
+.estimator-form input[type="email"],
+.estimator-form input[type="tel"],
+.estimator-form select,
+.estimator-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--neutral-medium);
+    border-radius: 5px;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: var(--white); /* Ensure background for select */
+    color: var(--text-dark); /* Ensure text color */
+    transition: border-color 0.3s ease;
+    appearance: none; /* Remove default select arrow in some browsers */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Add custom select arrow */
+.estimator-form select {
+     background-image: url('data:image/svg+xml;utf8,<svg fill="%23343a40" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'); /* Simple SVG arrow */
+     background-repeat: no-repeat;
+     background-position: right 15px center;
+     background-size: 1.2em;
+     padding-right: 40px; /* Make space for arrow */
+}
+/* Remove arrow in IE */
+.estimator-form select::-ms-expand {
+    display: none;
+}
+
+
+.estimator-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.estimator-form input:focus,
+.estimator-form select:focus,
+.estimator-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(10, 79, 110, 0.2); /* Use RGB of primary color */
+}
+
+/* Style disabled select option */
+.estimator-form select:required:invalid {
+    color: #6c757d; /* Bootstrap gray color */
+}
+.estimator-form option[value=""][disabled] {
+    display: none; /* Hide placeholder in dropdown */
+}
+.estimator-form option {
+    color: var(--text-dark); /* Ensure options have color */
+}
+
+.estimator-submit-button {
+    padding: 12px 35px; /* Adjust padding */
+}

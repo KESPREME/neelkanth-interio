@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <title>Style Quiz - Neelkanth Interio</title>
+
+</head>
+<body>
+    <div id="app">
+
+        <!-- =========== HEADER (with Mobile Button) =========== -->
+        <header class="site-header">
+            <div class="container header-container">
+                <a href="/" class="logo">
+                    <img src="/logo.png" alt="Neelkanth Interio Logo" class="logo-image">
+                </a>
+                <nav class="main-navigation">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/portfolio.html">Portfolio</a></li>
+                        <li><a href="/design-tools.html">Design Tools</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="mobile-menu-button" aria-label="Toggle Menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- =========== MAIN CONTENT (Unique to Style Quiz Page) =========== -->
+        <main id="main-content">
+
+             <section class="page-header-section" style="background-color: var(--neutral-light); padding: 40px 0; text-align: center;" data-aos="fade-in">
+                <div class="container">
+                    <h1>Discover Your Interior Design Style</h1>
+                    <p style="font-size: 1.1rem; color: #555;">Answer a few visual questions to find the style that suits you best.</p>
+                </div>
+            </section>
+
+            <!-- Quiz Container -->
+            <section class="quiz-container-section">
+                <div class="container">
+                    <div class="quiz-progress" style="margin-bottom: 30px; text-align:center; font-weight: bold;">
+                         Step <span id="current-step">1</span> of <span id="total-steps">3</span> 
+                    </div>
+
+                    <form id="style-quiz-form"> 
+
+                        
+                        <div class="quiz-step active" id="quiz-step-1" data-step="1">
+                            <h2 class="quiz-question">Which living room makes you feel most comfortable?</h2>
+                            <div class="quiz-options-grid">
+                                <div class="quiz-option" data-choice="modern" data-next-step="2">
+                                    <img src="/images/quiz-living-modern.jpg" alt="Modern Living Room">
+                                    <p>Clean lines, neutral colors, metallic accents.</p>
+                                </div>
+                                <div class="quiz-option" data-choice="boho" data-next-step="2">
+                                     <img src="/images/quiz-living-boho.jpg" alt="Boho Chic Living Room">
+                                     <p>Eclectic mix, plants, warm textures, patterns.</p>
+                                </div>
+                                <div class="quiz-option" data-choice="traditional" data-next-step="2">
+                                     <img src="/images/quiz-living-traditional.jpg" alt="Traditional Living Room">
+                                     <p>Classic furniture, symmetry, rich colors, ornate details.</p>
+                                </div>
+                                 <div class="quiz-option" data-choice="minimalist" data-next-step="2">
+                                     <img src="/images/quiz-living-minimalist.jpg" alt="Minimalist Living Room">
+                                     <p>Simplicity, functionality, essential elements only, calm.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                         <div class="quiz-step" id="quiz-step-2" data-step="2">
+                            <h2 class="quiz-question">Which color palette are you drawn to?</h2>
+                             <div class="quiz-options-grid">
+                                <div class="quiz-option" data-choice="neutral" data-next-step="3">
+                                    <img src="/images/quiz-color-neutral.jpg" alt="Neutral color palette">
+                                    <p>Whites, grays, beiges, subtle tones.</p>
+                                </div>
+                                <div class="quiz-option" data-choice="bold" data-next-step="3">
+                                     <img src="/images/quiz-color-bold.jpg" alt="Bold color palette">
+                                     <p>Deep jewel tones, vibrant contrasts, statement colors.</p>
+                                </div>
+                                <div class="quiz-option" data-choice="earthy" data-next-step="3">
+                                     <img src="/images/quiz-color-earthy.jpg" alt="Earthy color palette">
+                                     <p>Greens, browns, terracotta, warm natural hues.</p>
+                                </div>
+                                 <div class="quiz-option" data-choice="pastel" data-next-step="3">
+                                     <img src="/images/quiz-color-pastel.jpg" alt="Pastel color palette">
+                                     <p>Soft blues, pinks, mints, light and airy feel.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                         
+                         <div class="quiz-step" id="quiz-step-3" data-step="3">
+                            <h2 class="quiz-question">Which furniture style appeals to you most?</h2>
+                             <div class="quiz-options-grid">
+                                 
+                                <div class="quiz-option" data-result="/style-result-modern.html">
+                                    <img src="/images/quiz-furniture-modern.jpg" alt="Modern furniture style">
+                                    <p>Sleek, simple shapes, metal or glass elements, minimal ornamentation.</p>
+                                </div>
+                                <div class="quiz-option" data-result="/style-result-boho.html"> 
+                                     <img src="/images/quiz-furniture-boho.jpg" alt="Boho chic furniture style">
+                                     <p>Vintage finds, rattan, layered textiles, unique pieces.</p>
+                                </div>
+                                <div class="quiz-option" data-result="/style-result-traditional.html"> 
+                                     <img src="/images/quiz-furniture-traditional.jpg" alt="Traditional furniture style">
+                                     <p>Carved wood, curved lines, plush upholstery, classic silhouettes.</p>
+                                </div>
+                                 <div class="quiz-option" data-result="/style-result-minimalist.html"> 
+                                     <img src="/images/quiz-furniture-minimalist.jpg" alt="Minimalist furniture style">
+                                     <p>Functional forms, neutral materials, often low-profile.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- =========== FOOTER (Same as other pages) =========== -->
+        <footer class="site-footer">
+            <div class="container">
+                <p>© 2023 Neelkanth Interio. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">i</a>
+                    <a href="#" aria-label="LinkedIn">l</a>
+                </div>
+            </div>
+        </footer>
+
+    </div> <!-- End of #app -->
+
+    <script type="module" src="/src/main.js"></script>
+    
+</body>
+</html>

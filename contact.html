@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <title>Contact Us - Neelkanth Interio</title>
+
+</head>
+<body>
+    <div id="app">
+
+        <!-- =========== HEADER (with Mobile Button) =========== -->
+        <header class="site-header">
+            <div class="container header-container">
+                <a href="/" class="logo">
+                    <img src="/logo.png" alt="Neelkanth Interio Logo" class="logo-image">
+                </a>
+                <nav class="main-navigation">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/portfolio.html">Portfolio</a></li>
+                        <li><a href="/design-tools.html">Design Tools</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                 
+                <button class="mobile-menu-button" aria-label="Toggle Menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <main id="main-content">
+
+             <section class="page-header-section" style="background-color: var(--neutral-light); padding: 40px 0; text-align: center;" data-aos="fade-in">
+                <div class="container">
+                    <h1>Get In Touch</h1>
+                    <p style="font-size: 1.1rem; color: #555;">We'd love to hear about your project. Contact us today!</p>
+                </div>
+            </section>
+
+            <section class="contact-section">
+                <div class="container contact-grid">
+
+                    <div class="contact-info" data-aos="fade-right" data-aos-delay="100">
+                        <h3>Contact Details</h3>
+                        <p>Reach out to us through any of the channels below, or use the contact form.</p>
+                        <ul>
+                            <li>
+                                <strong><i class="icon-phone"></i> Phone:</strong>
+                                <a href="tel:+919414128493">+91 9414128493</a>
+                            </li>
+                            <li>
+                                <strong><i class="icon-email"></i> Email:</strong>
+                                <a href="mailto:mtlinteriorsolution@gmail.com">mtlinteriorsolution@gmail.com</a>
+                            </li>
+                            <li>
+                                <strong><i class="icon-address"></i> Address:</strong>
+                                <address>
+                                    G-74, Shastri Nagar<br>
+                                    Behind Aggrassen Park<br>
+                                    Jodhpur, Rajasthan 342003
+                                </address>
+                            </li>
+                             <li>
+                                <strong><i class="icon-hours"></i> Business Hours:</strong>
+                                <p>Monday - Saturday: 10:00 AM - 8:00 PM<br>
+                                Sunday: By Appointment Only</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="contact-form-container" data-aos="fade-left" data-aos-delay="200">
+                        <h3>Send Us a Message</h3>
+                        <form id="contact-form" class="contact-form" name="contact" method="POST">
+                            <input type="hidden" name="form-name" value="contact" />
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                             <div class="form-group">
+                                <label for="phone">Phone (Optional):</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                             <div class="form-group">
+                                <label for="subject">Subject:</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message:</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="button contact-submit-button">Send Message</button>
+                            </div>
+                            <div id="form-status" class="form-status"></div>
+                        </form>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="map-section" style="padding-top: 0;" data-aos="fade-up">
+                <div class="container">
+                     <h3 class="text-center" style="margin-bottom: 30px;">Our Location</h3>
+                     <!-- Updated Map Embed URL Below -->
+                    <div class="map-embed">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.9008864120774!2d72.99581177616795!3d26.26487997703936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39418c2165367c43%3A0x5d51124133af66c9!2sNeelkanth%20Interio!5e0!3m2!1sen!2sin!4v1744495460086!5m2!1sen!2sin"
+                            width="100%"
+                            height="450"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+
+
+        </main>
+
+        <!-- =========== FOOTER (Same as other pages) =========== -->
+        <footer class="site-footer">
+            <div class="container">
+                <p>© 2023 Neelkanth Interio. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">i</a>
+                    <a href="#" aria-label="LinkedIn">l</a>
+                </div>
+            </div>
+        </footer>
+
+    </div> <!-- End of #app -->
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

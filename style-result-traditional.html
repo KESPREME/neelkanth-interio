@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Your Style: Traditional - Neelkanth Interio</title>
+</head>
+<body>
+    <div id="app">
+         <!-- =========== HEADER =========== -->
+         <header class="site-header">
+            <div class="container header-container">
+                <a href="/" class="logo"><img src="/logo.png" alt="Neelkanth Interio Logo" class="logo-image"></a>
+                <nav class="main-navigation">
+                    <ul><li><a href="/">Home</a></li><li><a href="/about.html">About</a></li><li><a href="/services.html">Services</a></li><li><a href="/portfolio.html">Portfolio</a></li><li><a href="/design-tools.html">Design Tools</a></li><li><a href="/contact.html">Contact</a></li></ul>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle Menu" aria-expanded="false"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <section class="page-header-section" style="background-color: var(--neutral-light); padding: 40px 0; text-align: center;">
+                <div class="container"><h1>Your Style Result</h1></div>
+            </section>
+            <section class="quiz-result-section">
+                <div class="container" style="max-width: 800px; text-align: center;">
+                    <h2 style="color: var(--primary-color); font-size: 2rem;">You lean towards a Traditional Style!</h2>
+                    <img src="/images/result-traditional.jpg" alt="Traditional Style Example" style="width: 100%; max-width: 500px; margin: 20px auto; border-radius: 8px;">
+                    <p style="font-size: 1.1rem; line-height: 1.7;">Traditional design draws inspiration from classic European decor. It features ornate details, rich color palettes, curved lines, and symmetrical arrangements. Think dark woods, elegant fabrics like silk and velvet, detailed moldings, and timeless furniture silhouettes.</p>
+                    <h3>Next Steps:</h3>
+                    <p>Explore projects in our portfolio that showcase the Traditional style:</p>
+                    <a href="/portfolio.html?filter=traditional" class="button" style="margin: 5px;">View Traditional Projects</a>
+                    <p style="margin-top: 20px;">Ready to discuss how we can bring timeless elegance to your space?</p>
+                    <a href="/contact.html" class="button" style="margin: 5px;">Book a Consultation</a>
+                </div>
+            </section>
+        </main>
+
+        <!-- =========== FOOTER =========== -->
+        <footer class="site-footer">
+            <div class="container"><p>© 2023 Neelkanth Interio. All rights reserved.</p><div class="social-links"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">i</a><a href="#" aria-label="LinkedIn">l</a></div></div>
+        </footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
