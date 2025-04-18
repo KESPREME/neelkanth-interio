@@ -1,0 +1,34 @@
+# Backend configuration using Netlify's Git Gateway for authentication
+backend:
+  name: git-gateway
+  branch: main # Specify the branch to work with (e.g., main, master)
+
+# Media files will be stored in 'public/images/uploads'
+# and accessed via '/images/uploads' on the site
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+# Define content collections
+collections:
+  # Materials Collection
+  - name: "materials"           # Used in routes, e.g., /admin/#/collections/materials
+    label: "Materials Library"  # Label shown in the CMS UI
+    folder: "src/data/materials" # ** CRITICAL: Where the CMS saves the data files **
+                                # Vite likely won't see these directly for the build
+    create: true                # Allow creating new material entries
+    slug: "{{slug}}"            # Filename will be generated from the title field
+    fields:                     # Define the fields for each material entry
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Category", name: "category", widget: "select", options: ["hardware", "wallpaper", "pvc-panel", "panel", "tile"] }
+      - { label: "Style/Finish", name: "style", widget: "select", options: ["matte-black", "brushed-brass", "polished-nickel", "geometric", "floral", "wood-look", "marble-look", "greenery", "other"], required: false }
+      - { label: "Featured Image (Grid)", name: "image", widget: "image" }
+      - { label: "Detail Page URL", name: "detailPage", widget: "string", hint: "e.g., /material-detail-orb-knob.html. Ensure this page exists!"}
+      - { label: "Description", name: "description", widget: "markdown", required: false }
+      - { label: "Specifications", name: "specs", widget: "list", required: false, fields: [
+          { label: "Spec Name", name: "name", widget: "string"},
+          { label: "Spec Value", name: "value", widget: "string"}
+        ]}
+      - { label: "Detail Gallery Images", name: "gallery", widget: "list", required: false, summary: "{{fields.alt}}", fields: [
+           { label: "Image", name: "image", widget: "image"},
+           { label: "Alt Text", name: "alt", widget: "string"}
+         ] }

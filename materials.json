@@ -1,0 +1,109 @@
+[
+    {
+      "title": "Vertical Garden Panel",
+      "category": "panel",
+      "style": "greenery",
+      "image": "/images/panel-vertical-garden-large.jpg",
+      "detailPage": "/material-detail-vertical-garden.html",
+      "description": "Realistic artificial foliage panel for maintenance-free greenery.",
+      "specs": [
+        {"name": "Material", "value": "PE (Polyethylene)"},
+        {"name": "Size", "value": "50cm x 50cm"}
+      ],
+      "gallery": [
+        {"image": "/images/panel-vertical-garden-thumb1.jpg", "alt": "Vertical Garden Panel - Main View"},
+        {"image": "/images/panel-vertical-garden-thumb2.jpg", "alt": "Vertical Garden Panel - Detail"},
+        {"image": "/images/panel-vertical-garden-thumb3.jpg", "alt": "Vertical Garden Panel - Room"}
+      ]
+    },
+    {
+      "title": "Geo Lines Wallpaper",
+      "category": "wallpaper",
+      "style": "geometric",
+      "image": "/images/wallpaper-geo-lines-large.jpg",
+      "detailPage": "/material-detail-geo-wallpaper.html",
+      "description": "Art Deco inspired wallpaper with metallic gold lines on navy.",
+      "specs": [
+        {"name": "Material", "value": "Non-Woven Paper"},
+        {"name": "Repeat", "value": "64cm Straight"},
+        {"name": "Roll Size", "value": "52cm x 10m"}
+      ],
+       "gallery": [
+        {"image": "/images/wallpaper-geo-lines-thumb1.jpg", "alt": "Geo Lines Wallpaper - Main View"},
+        {"image": "/images/wallpaper-geo-lines-thumb2.jpg", "alt": "Geo Lines Wallpaper - Detail"},
+        {"image": "/images/wallpaper-geo-lines-thumb3.jpg", "alt": "Geo Lines Wallpaper - Room"}
+      ]
+    },
+    {
+      "title": "Light Oak Slat Panel",
+      "category": "pvc-panel",
+      "style": "wood-look",
+      "image": "/images/pvc-panel-light-oak.jpg",
+      "detailPage": "/material-detail-pvc-woodpanel.html",
+      "description": "Warm, textured wood look with the durability of PVC.",
+      "specs": [
+        {"name": "Material", "value": "High-Density PVC"},
+        {"name": "Finish", "value": "Light Oak Texture"},
+        {"name": "Panel Size", "value": "120mm x 2900mm x 12mm"}
+      ],
+       "gallery": [
+        {"image": "/images/pvc-panel-light-oak-thumb1.jpg", "alt": "Light Oak Slat PVC Panel - Main View"},
+        {"image": "/images/pvc-panel-light-oak-thumb2.jpg", "alt": "Light Oak Slat PVC Panel - Detail"},
+        {"image": "/images/pvc-panel-light-oak-thumb3.jpg", "alt": "Light Oak Slat PVC Panel - Installation"}
+      ]
+    },
+    {
+      "title": "Orb Spherical Knob",
+      "category": "hardware",
+      "style": "brushed-brass",
+      "image": "/images/hardware-orb-knob-bb-large.jpg",
+      "detailPage": "/material-detail-orb-knob.html",
+      "description": "Simple and elegant solid brass spherical knob.",
+       "specs": [
+        {"name": "Material", "value": "Solid Brass"},
+        {"name": "Finish", "value": "Brushed Brass"},
+        {"name": "Diameter", "value": "30mm"}
+      ],
+       "gallery": [
+        {"image": "/images/hardware-orb-knob-bb-thumb1.jpg", "alt": "Orb Spherical Knob - Main View"},
+        {"image": "/images/hardware-orb-knob-bb-thumb2.jpg", "alt": "Orb Spherical Knob - Side"},
+        {"image": "/images/hardware-orb-knob-bb-thumb3.jpg", "alt": "Orb Spherical Knob - On Cabinet"}
+      ]
+    },
+    {
+      "title": "Calacatta Gold Tile",
+      "category": "tile",
+      "style": "marble-look",
+      "image": "/images/tile-calacatta-gold-large.jpg",
+      "detailPage": "/material-detail-marble-tile.html",
+      "description": "Luxurious marble look in durable large-format porcelain.",
+       "specs": [
+        {"name": "Material", "value": "Porcelain"},
+        {"name": "Finish", "value": "Polished"},
+        {"name": "Size", "value": "600mm x 1200mm"}
+      ],
+       "gallery": [
+        {"image": "/images/tile-calacatta-gold-thumb1.jpg", "alt": "Calacatta Gold Tile - Main View"},
+        {"image": "/images/tile-calacatta-gold-thumb2.jpg", "alt": "Calacatta Gold Tile - Veining Detail"},
+        {"image": "/images/tile-calacatta-gold-thumb3.jpg", "alt": "Calacatta Gold Tile - Bathroom"}
+      ]
+    },
+    {
+      "title": "Vintage Floral Paper",
+      "category": "wallpaper",
+      "style": "floral",
+      "image": "/images/wallpaper-vintage-floral-large.jpg",
+      "detailPage": "/material-detail-floral-wallpaper.html",
+      "description": "Romantic floral pattern with muted tones on cream.",
+       "specs": [
+        {"name": "Material", "value": "Paper (Paste the Paper)"},
+        {"name": "Repeat", "value": "53cm Offset"},
+        {"name": "Roll Size", "value": "53cm x 10m"}
+      ],
+       "gallery": [
+        {"image": "/images/wallpaper-vintage-floral-thumb1.jpg", "alt": "Vintage Floral Wallpaper - Main View"},
+        {"image": "/images/wallpaper-vintage-floral-thumb2.jpg", "alt": "Vintage Floral Wallpaper - Pattern Detail"},
+        {"image": "/images/wallpaper-vintage-floral-thumb3.jpg", "alt": "Vintage Floral Wallpaper - In Room"}
+      ]
+    }
+  ]

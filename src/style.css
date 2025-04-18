@@ -173,6 +173,18 @@
       width: 100%;
    }
    
+   .main-navigation a.active-nav-link {
+       color: var(--secondary-color);
+       font-weight: bold;
+   }
+   
+   .main-navigation a.active-nav-link::after {
+        width: 100%;
+   }
+   .main-navigation a.active-nav-link:hover::after {
+        width: 100%;
+   }
+   
    /* ==========================================================================
       5. Main Content Sections (Homepage)
       ========================================================================== */
@@ -307,7 +319,6 @@
    }
    
    .portfolio-preview-section {
-       /* No specific background */
    }
    
    .portfolio-grid {
@@ -694,60 +705,57 @@
         .service-item:nth-child(even) .service-description { order: 2; }
         .service-description h2 { text-align: center; }
    }
-   /* Additions to /* 9. Services Page Specific Styles */
-/* Or create section /* 9a. Service Material Focus */
-
-.material-focus {
-    display: flex;
-    gap: 20px; /* Space between image and text */
-    align-items: center; /* Align items vertically */
-    background-color: var(--neutral-light); /* Light background to set it apart */
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 30px; /* Space above this block */
-    margin-bottom: 30px; /* Space below this block */
-    border: 1px solid var(--neutral-medium);
-}
-
-.material-focus img {
-    flex-shrink: 0; /* Prevent image from shrinking */
-    width: 100px; /* Adjust size as needed */
-    height: 100px;
-    object-fit: cover;
-    border-radius: 5px; /* Slightly rounded corners */
-}
-
-.material-focus-text h5 {
-    font-family: var(--font-primary); /* Use primary font */
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin-bottom: 8px;
-}
-
-.material-focus-text p {
-    font-size: 0.9rem;
-    color: #555;
-    line-height: 1.5;
-    margin-bottom: 0; /* Remove default paragraph margin */
-}
-.material-focus-text p a {
-    font-weight: bold; /* Make link stand out */
-    color: var(--secondary-color);
-}
-
-/* Responsive adjustments for material focus */
-@media (max-width: 576px) {
-    .material-focus {
-        flex-direction: column; /* Stack image and text */
-        text-align: center;
-        gap: 15px;
-    }
-    .material-focus img {
-        width: 120px; /* Slightly larger when stacked */
-        height: 120px;
-    }
-}
+   
+   .material-focus {
+       display: flex;
+       gap: 20px;
+       align-items: center;
+       background-color: var(--neutral-light);
+       padding: 20px;
+       border-radius: 8px;
+       margin-top: 30px;
+       margin-bottom: 30px;
+       border: 1px solid var(--neutral-medium);
+   }
+   
+   .material-focus img {
+       flex-shrink: 0;
+       width: 100px;
+       height: 100px;
+       object-fit: cover;
+       border-radius: 5px;
+   }
+   
+   .material-focus-text h5 {
+       font-family: var(--font-primary);
+       font-size: 1.1rem;
+       font-weight: bold;
+       color: var(--primary-color);
+       margin-bottom: 8px;
+   }
+   
+   .material-focus-text p {
+       font-size: 0.9rem;
+       color: #555;
+       line-height: 1.5;
+       margin-bottom: 0;
+   }
+   .material-focus-text p a {
+       font-weight: bold;
+       color: var(--secondary-color);
+   }
+   
+   @media (max-width: 576px) {
+       .material-focus {
+           flex-direction: column;
+           text-align: center;
+           gap: 15px;
+       }
+       .material-focus img {
+           width: 120px;
+           height: 120px;
+       }
+   }
    
    /* ==========================================================================
       10. Portfolio Page Specific Styles
@@ -1156,11 +1164,11 @@
      }
       .gallery-item img {
          height: 200px;
-     }
+      }
       .portfolio-nav-flex {
          flex-direction: column;
          gap: 15px;
-     }
+      }
    }
    
    /* ==========================================================================
@@ -1243,6 +1251,13 @@
        .mobile-menu-button.is-active .hamburger-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
        .mobile-menu-button.is-active .hamburger-line:nth-child(2) { opacity: 0; }
        .mobile-menu-button.is-active .hamburger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+   
+       .main-navigation a.active-nav-link {
+           color: var(--accent-color);
+       }
+        .main-navigation a.active-nav-link::after {
+            display: none;
+        }
    
    }
    
@@ -1537,7 +1552,7 @@
    .estimator-submit-button { padding: 12px 35px; }
    
    /* ==========================================================================
-      18. Materials Library Styles (Formerly Hardware Collection)
+      18. Materials Library Styles
       ========================================================================== */
    
    .hardware-filters .filter-button {
@@ -1591,7 +1606,6 @@
        display: block;
    }
    
-   /* Specific override for wallpaper category previews */
    .hardware-item-card[data-category="wallpaper"] img {
        object-fit: cover;
        padding: 0;
@@ -1639,7 +1653,7 @@
        }
    }
    /* ==========================================================================
-      19. Material Detail Page Styles (Formerly Hardware Detail)
+      19. Material Detail Page Styles
       ========================================================================== */
    
       .minimal-header .breadcrumb {
@@ -1668,7 +1682,6 @@
        padding: 20px;
    }
    
-   /* Adjust detail image for wallpaper/panels */
    .material-detail-wallpaper .main-image-container img,
    .material-detail-panel .main-image-container img {
        object-fit: cover;
@@ -1704,7 +1717,6 @@
        box-shadow: 0 0 5px rgba(10, 79, 110, 0.3);
    }
    
-   /* Adjust thumbnails for wallpaper/panels */
    .material-detail-wallpaper .thumbnail-images img,
    .material-detail-panel .thumbnail-images img {
         object-fit: cover;
@@ -1984,4 +1996,61 @@
         .lightbox-prev, .lightbox-next { font-size: 2rem; }
         .lightbox-close { font-size: 2.5rem; top: 10px; right: 10px;}
         #lightbox-image { max-height: calc(80vh - 60px); }
+   }
+   /* ==========================================================================
+      22. Testimonial Slider Styles
+      ========================================================================== */
+   
+   .testimonial-swiper {
+       position: relative;
+       padding: 20px 0 50px 0;
+       max-width: 800px;
+       margin: 0 auto;
+   }
+   
+   .swiper-slide {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+   }
+   
+   .testimonial {
+       max-width: 100%;
+   }
+   
+   .testimonial-pagination .swiper-pagination-bullet {
+       background-color: rgba(255, 255, 255, 0.5);
+       width: 10px;
+       height: 10px;
+       opacity: 0.8;
+       transition: background-color 0.3s ease, opacity 0.3s ease;
+   }
+   
+   .testimonial-pagination .swiper-pagination-bullet-active {
+       background-color: var(--accent-color);
+       opacity: 1;
+   }
+   
+   .testimonial-button-prev,
+   .testimonial-button-next {
+       color: var(--accent-color);
+       transform: scale(0.8);
+       transition: color 0.3s ease;
+   }
+   .testimonial-button-prev:hover,
+   .testimonial-button-next:hover {
+        color: var(--white);
+   }
+   
+   @media (max-width: 768px) {
+       .testimonial-button-prev { left: 5px; }
+       .testimonial-button-next { right: 5px; }
+       .testimonial-swiper { padding-left: 30px; padding-right: 30px; }
+   }
+   @media (max-width: 480px) {
+       .testimonial-button-prev,
+       .testimonial-button-next {
+           display: none;
+       }
+        .testimonial-swiper { padding-left: 15px; padding-right: 15px; }
    }

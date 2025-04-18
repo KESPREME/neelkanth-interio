@@ -10,9 +10,12 @@
   },
   "devDependencies": {
     "aos": "^2.3.4",
+    "gray-matter": "^4.0.3",
     "vite": "^6.2.0"
   },
   "dependencies": {
-    "neelkanth-interio": "file:"
+    "decap-cms-app": "^3.6.2",
+    "neelkanth-interio": "file:",
+    "swiper": "^11.2.6"
   }
 }
