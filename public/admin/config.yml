@@ -1,43 +1,33 @@
-# REQUIRED: Backend configuration using Netlify's Git Gateway.
-# This tells Decap CMS to use Netlify Identity for login.
 backend:
-  name: git-gateway
-  repo: KESPREME/neelkanth-interio
-  branch: main # IMPORTANT: Replace 'main' if your deploy branch is different (e.g., 'master')
-  base_url: https://api.netlify.com
-  auth_endpoint: /auth
+  name: github
+  repo: KESPREME/neelkanth-interio # Updated repo path
+  branch: main # Branch you deploy from and push to
 
-# REQUIRED: Media and Public Folder configuration.
-# Where images uploaded via the CMS are stored and how they're accessed.
-media_folder: "public/images" # Relative path from project root where files are saved
-public_folder: "/images"     # Path used in the final URLs on the website
+# Media files will be stored in 'public/images/uploads'
+# and accessed via '/images/uploads' on the site
+media_folder: "public/images"
+public_folder: "/images"
 
-# Define content collections (you need at least one).
+# Define content collections
 collections:
-  # Materials Collection definition
-  - name: "materials"           # Internal identifier for the collection
-    label: "Materials Library"  # Display name in the CMS sidebar
-    folder: "src/data/materials" # Directory where data files for this collection are stored
-    create: true                # Allow users to create new entries via the CMS
-    slug: "{{slug}}"            # Generate filename from the 'title' field automatically
-    fields:                     # Fields for each material entry
-      - { label: "Title", name: "title", widget: "string" } # Text input for the title
-      - { label: "Category", name: "category", widget: "select", options: ["hardware", "wallpaper", "pvc-panel", "panel", "tile"] } # Dropdown for category
-      - { label: "Style/Finish", name: "style", widget: "select", options: ["matte-black", "brushed-brass", "polished-nickel", "geometric", "floral", "wood-look", "marble-look", "greenery", "other"], required: false } # Optional dropdown for style
-      - { label: "Featured Image (Grid)", name: "image", widget: "image" } # Image uploader for the main grid image
-      - { label: "Detail Page URL", name: "detailPage", widget: "string", hint: "e.g., /material-detail-orb-knob.html. Ensure this page exists or is generated!"} # Text input for the link
-      - { label: "Description", name: "description", widget: "markdown", required: false } # Rich text editor for description
-      - { label: "Specifications", name: "specs", widget: "list", required: false, fields: [ # Repeatable list for specs
+  # Materials Collection
+  - name: "materials"           # Used in routes, e.g., /admin/#/collections/materials
+    label: "Materials Library"  # Label shown in the CMS UI
+    folder: "src/data/materials" # Where the CMS saves the data files
+    create: true                # Allow creating new material entries
+    slug: "{{slug}}"            # Filename will be generated from the title field
+    fields:                     # Define the fields for each material entry
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Category", name: "category", widget: "select", options: ["hardware", "wallpaper", "pvc-panel", "panel", "tile"] }
+      - { label: "Style/Finish", name: "style", widget: "select", options: ["matte-black", "brushed-brass", "polished-nickel", "geometric", "floral", "wood-look", "marble-look", "greenery", "other"], required: false }
+      - { label: "Featured Image (Grid)", name: "image", widget: "image" }
+      - { label: "Detail Page URL", name: "detailPage", widget: "string", hint: "e.g., /material-detail-orb-knob.html. Ensure this page exists!"}
+      - { label: "Description", name: "description", widget: "markdown", required: false }
+      - { label: "Specifications", name: "specs", widget: "list", required: false, fields: [
           { label: "Spec Name", name: "name", widget: "string"},
           { label: "Spec Value", name: "value", widget: "string"}
         ]}
-      - { label: "Detail Gallery Images", name: "gallery", widget: "list", required: false, summary: "{{fields.alt}}", fields: [ # Repeatable list for gallery images
+      - { label: "Detail Gallery Images", name: "gallery", widget: "list", required: false, summary: "{{fields.alt}}", fields: [
            { label: "Image", name: "image", widget: "image"},
            { label: "Alt Text", name: "alt", widget: "string"}
          ] }
-
-# Optional: Configure display URL if your Netlify site has a custom domain
-# display_url: "https://www.yourdomain.com"
-
-# Optional: Configure editorial workflow
-# publish_mode: editorial_workflow

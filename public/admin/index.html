@@ -4,12 +4,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager (Admin)</title>
-  <!-- Load the Decap CMS CSS -->
   <link rel="stylesheet" href="https://unpkg.com/decap-cms@^3.0.0/dist/cms.css" />
+  <!-- Script to handle GitHub OAuth flow via Netlify -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <!-- ONLY Load the Decap CMS script -->
-  <!-- It should automatically look for /admin/config.yml -->
+  <!-- Initialize Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/cms.js"></script>
+  <script>
+    // Handle OAuth redirection if coming back from GitHub
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+      if (window.location.hash.includes("_token=") || window.location.hash.includes("access_token=")) {
+         console.log("Attempting implicit auth callback...");
+      }
+    } else {
+        console.warn("Netlify Identity widget not found.");
+    }
+  </script>
 </body>
 </html>
