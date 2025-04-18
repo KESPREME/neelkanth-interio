@@ -4,30 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager (Admin)</title>
-  <!-- Load necessary CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/decap-cms-app@^3.1.0/dist/main.css" />
-  <!-- Load Netlify Identity Widget -->
+  <!-- Load the corresponding CSS for decap-cms.js -->
+  <link rel="stylesheet" href="https://unpkg.com/decap-cms@^3.0.0/dist/cms.css" />
+  <!-- Load Netlify Identity Widget FIRST -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <!-- Add the root element for Decap CMS to mount onto -->
+  <!-- Root element for Decap CMS to mount onto -->
   <div id="nc-root"></div>
 
-  <!-- Load the main Decap CMS App script -->
-  <script src="https://unpkg.com/decap-cms-app@^3.1.0/dist/decap-cms-app.js"></script>
-
-  <!-- Minimal inline script for identity handling (optional but can help) -->
-   <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-   </script>
+  <!-- Load the Decap CMS script (using the older name that might expect nc-root) -->
+  <!-- Place this script AFTER the nc-root div -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
 </body>
 </html>
