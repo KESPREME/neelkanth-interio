@@ -2,6 +2,7 @@
 # This tells Decap CMS to use Netlify Identity for login.
 backend:
   name: git-gateway
+  repo: KESPREME/neelkanth-interio
   branch: main # IMPORTANT: Replace 'main' if your deploy branch is different (e.g., 'master')
 
 # REQUIRED: Media and Public Folder configuration.
