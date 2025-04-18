@@ -5,8 +5,8 @@ backend:
 
 # Media files will be stored in 'public/images/uploads'
 # and accessed via '/images/uploads' on the site
-media_folder: "public/images/uploads"
-public_folder: "/images/uploads"
+media_folder: "public/images"
+public_folder: "/images"
 
 # Define content collections
 collections:
