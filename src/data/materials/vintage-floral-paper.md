@@ -2,7 +2,7 @@
 title: Vintage Floral Paper
 category: wallpaper
 style: floral
-image: /images/wallpaper-vintage-floral.jpg
+image: /images/wallpaper-vintage-floral-large.jpg
 detailPage: /material-detail-floral-wallpaper.html
 specs:
   - name: Material

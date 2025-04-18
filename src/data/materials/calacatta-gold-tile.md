@@ -2,7 +2,7 @@
 title: Calacatta Gold Tile
 category: tile
 style: marble-look
-image: /images/tile-calacatta-gold.jpg
+image: /images/tile-calacatta-gold-large.jpg
 detailPage: /material-detail-marble-tile.html
 specs:
   - name: Material

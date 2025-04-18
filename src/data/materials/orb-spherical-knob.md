@@ -2,7 +2,7 @@
 title: Orb Spherical Knob
 category: hardware
 style: brushed-brass
-image: /images/hardware-orb-knob-bb.jpg
+image: /images/hardware-orb-knob-bb-large.jpg
 detailPage: /material-detail-orb-knob.html
 specs:
   - name: Material

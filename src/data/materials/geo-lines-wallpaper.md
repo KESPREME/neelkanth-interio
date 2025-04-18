@@ -2,7 +2,7 @@
 title: Geo Lines Wallpaper
 category: wallpaper
 style: geometric
-image: /images/wallpaper-geo-lines.jpg
+image: /images/wallpaper-geo-lines-large.jpg
 detailPage: /material-detail-geo-wallpaper.html
 specs:
   - name: Material

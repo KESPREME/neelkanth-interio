@@ -3,7 +3,7 @@
     "title": "Calacatta Gold Tile",
     "category": "tile",
     "style": "marble-look",
-    "image": "/images/tile-calacatta-gold.jpg",
+    "image": "/images/tile-calacatta-gold-large.jpg",
     "detailPage": "/material-detail-marble-tile.html",
     "description": "Capture the luxurious beauty of Italian Calacatta Gold marble with the practicality and durability of porcelain. This large-format tile features dramatic grey veining accented with warm golden hues on a luminous white background. Ideal for elegant floors and walls.",
     "specs": [
@@ -47,7 +47,7 @@
     "title": "Geo Lines Wallpaper",
     "category": "wallpaper",
     "style": "geometric",
-    "image": "/images/wallpaper-geo-lines.jpg",
+    "image": "/images/wallpaper-geo-lines-large.jpg",
     "detailPage": "/material-detail-geo-wallpaper.html",
     "description": "Art Deco inspired wallpaper with metallic gold lines on navy. Creates a dynamic and luxurious feature wall. Easy paste-the-wall application.",
     "specs": [
@@ -119,7 +119,7 @@
     "title": "Orb Spherical Knob",
     "category": "hardware",
     "style": "brushed-brass",
-    "image": "/images/hardware-orb-knob-bb.jpg",
+    "image": "/images/hardware-orb-knob-bb-large.jpg",
     "detailPage": "/material-detail-orb-knob.html",
     "description": "Simple and elegant solid brass spherical knob. Complements various design styles, from mid-century modern to contemporary.",
     "specs": [
@@ -155,7 +155,7 @@
     "title": "Vertical Garden Panel",
     "category": "panel",
     "style": "greenery",
-    "image": "/images/panel-vertical-garden-mixed.jpg",
+    "image": "/images/panel-vertical-garden-large.jpg",
     "detailPage": "/material-detail-vertical-garden.html",
     "description": "Instantly bring life and vibrant texture to any interior wall with these realistic artificial vertical garden panels. Featuring a lush mix of foliage, they create a stunning biophilic focal point without the need for maintenance.",
     "specs": [
@@ -191,7 +191,7 @@
     "title": "Vintage Floral Paper",
     "category": "wallpaper",
     "style": "floral",
-    "image": "/images/wallpaper-vintage-floral.jpg",
+    "image": "/images/wallpaper-vintage-floral-large.jpg",
     "detailPage": "/material-detail-floral-wallpaper.html",
     "description": "Bring romantic, vintage charm to your space with this elegant floral wallpaper. Featuring delicate blooms in muted tones on a soft cream background, it creates a calming and sophisticated atmosphere.",
     "specs": [

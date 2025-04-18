@@ -2,7 +2,7 @@
 title: Vertical Garden Panel
 category: panel
 style: greenery
-image: /images/panel-vertical-garden-mixed.jpg
+image: /images/panel-vertical-garden-large.jpg
 detailPage: /material-detail-vertical-garden.html
 specs:
   - name: Material

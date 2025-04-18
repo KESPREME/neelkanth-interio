@@ -43,8 +43,8 @@ export default defineConfig({
         materialDetailMarbleTile: resolve(__dirname, 'material-detail-marble-tile.html'),
         materialDetailFloralWallpaper: resolve(__dirname, 'material-detail-floral-wallpaper.html'),
 
-        // Admin Page Loader (in root)
-        admin: resolve(__dirname, 'admin.html'),
+        // REMOVED - Admin Page Loader (in root) - No longer needed here as it's in public/
+        // admin: resolve(__dirname, 'admin.html'),
 
       },
     },
