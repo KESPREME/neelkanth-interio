@@ -42,23 +42,11 @@ export default defineConfig({
         materialDetailOrbKnob: resolve(__dirname, 'material-detail-orb-knob.html'),
         materialDetailMarbleTile: resolve(__dirname, 'material-detail-marble-tile.html'),
         materialDetailFloralWallpaper: resolve(__dirname, 'material-detail-floral-wallpaper.html'),
-        // Add other material detail pages here... e.g.:
-        // materialDetailMetroLever: resolve(__dirname, 'material-detail-metro-lever.html'), // If you kept/re-added it
-        // materialDetailRidgePull: resolve(__dirname, 'material-detail-ridge-pull.html'), // If you kept/re-added it
-        // materialDetailFacetKnob: resolve(__dirname, 'material-detail-facet-knob.html'), // If you kept/re-added it
 
-        // Admin Page (Important: ensure it's copied if in public/, or processed if elsewhere)
-        // If admin.html is in root:
-        // admin: resolve(__dirname, 'admin.html'),
-        // If admin/index.html is in public, Vite *should* copy it automatically,
-        // but listing it here ensures it's treated as an entry point if needed.
-        // If your /public/admin/index.html loads JS that needs bundling, list it.
-        // Otherwise, relying on Vite's default public dir copy is usually sufficient.
+        // Admin Page Loader (in root)
+        admin: resolve(__dirname, 'admin.html'),
+
       },
     },
   },
-  // If admin.html is NOT in /public, ensure it's not excluded by optimizeDeps
-  // optimizeDeps: {
-  //   exclude: ['admin.html'] // Example if it was in root and causing issues
-  // }
 });
