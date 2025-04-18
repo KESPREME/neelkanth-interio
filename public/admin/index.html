@@ -4,38 +4,31 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager (Admin)</title>
-  <link rel="stylesheet" href="https://unpkg.com/decap-cms@^3.0.0/dist/cms.css" />
-  <!-- Netlify Identity Widget script is REMOVED from here -->
-  <!-- Decap CMS script will load first -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/cms.js"></script>
+  <!-- Load updated Decap CMS CSS (using decap-cms) -->
+  <link rel="stylesheet" href="https://unpkg.com/decap-cms-app@^3.1.0/dist/main.css" />
+  <!-- Load Netlify Identity Widget *first* if needed for login button handling -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <!-- Add a div for the Netlify Identity widget to attach to if needed -->
-  <div data-netlify-identity-button></div>
+  <!-- Decap CMS will mount here. Ensure this div exists -->
+  <div id="nc-root"></div>
 
-  <!-- Script to potentially initialize the widget manually if CMS fails -->
-   <script>
-       // Load Netlify Identity Widget script *after* Decap CMS potentially tries to load
-       const script = document.createElement('script');
-       script.src = "https://identity.netlify.com/v1/netlify-identity-widget.js";
-       script.onload = function() {
-           console.log("Netlify Identity Widget Script Loaded");
-           // Optional: Add manual initialization or listeners here IF NEEDED,
-           // but often just loading it is enough for Decap CMS to potentially interact.
-           // Example (might not be necessary):
-           // if (window.netlifyIdentity) {
-           //   window.netlifyIdentity.on("init", user => {
-           //     console.log("NIW Init:", user);
-           //     if (!user) {
-           //       window.netlifyIdentity.on("login", (user) => {
-           //         console.log("NIW Login:", user);
-           //         document.location.href = "/admin/";
-           //       });
-           //     }
-           //   });
-           // }
-       };
-       document.body.appendChild(script);
-   </script>
+  <!-- Load updated Decap CMS script -->
+  <script src="https://unpkg.com/decap-cms-app@^3.1.0/dist/decap-cms-app.js"></script>
+
+  <!-- Initialization and login handling (optional, Decap might handle automatically now) -->
+  <script>
+      // Basic check to ensure identity functions are available if needed later
+      if (window.netlifyIdentity) {
+          window.netlifyIdentity.on('init', user => {
+              if (!user) {
+                  window.netlifyIdentity.on('login', () => {
+                      // Could potentially redirect, but CMS usually handles this
+                      // document.location.href = '/admin/';
+                  });
+              }
+          });
+      }
+  </script>
 </body>
 </html>
