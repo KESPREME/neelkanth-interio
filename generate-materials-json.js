@@ -1,7 +1,12 @@
-const fs = require('fs');
-const path = require('path');
-// Add 'gray-matter' if you store data as Markdown with YAML frontmatter
-// const matter = require('gray-matter');
+import fs from 'fs'; // Use import for fs
+import path from 'path'; // Use import for path
+import { fileURLToPath } from 'url'; // Helper to convert URL to path
+
+// Add 'gray-matter' if needed and installed: import matter from 'gray-matter';
+
+// Get the directory name of the current module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const materialsDir = path.join(__dirname, 'src', 'data', 'materials');
 const outputFile = path.join(__dirname, 'public', 'materials.json');
@@ -11,7 +16,6 @@ try {
     const files = fs.readdirSync(materialsDir);
 
     files.forEach(file => {
-        // Process only .json or .md files (adjust as needed)
         if (file.endsWith('.json')) {
             const filePath = path.join(materialsDir, file);
             const fileContent = fs.readFileSync(filePath, 'utf-8');
@@ -22,13 +26,13 @@ try {
                 console.error(`Error parsing JSON file ${file}:`, parseError);
             }
         }
-        // Example for Markdown with frontmatter:
-        /* else if (file.endsWith('.md')) {
+        /* Example for Markdown with frontmatter:
+        else if (file.endsWith('.md')) {
             const filePath = path.join(materialsDir, file);
             const fileContent = fs.readFileSync(filePath, 'utf-8');
             try {
-                const { data, content } = matter(fileContent); // Use gray-matter
-                data.description = content; // Add markdown content to description field
+                const { data, content } = matter(fileContent); // Use gray-matter (requires import)
+                data.description = content;
                 allMaterials.push(data);
             } catch (parseError) {
                  console.error(`Error parsing Markdown file ${file}:`, parseError);
