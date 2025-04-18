@@ -4,17 +4,32 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager (Admin)</title>
-  <!-- Load the corresponding CSS for decap-cms.js -->
-  <link rel="stylesheet" href="https://unpkg.com/decap-cms@^3.0.0/dist/cms.css" />
   <!-- Load Netlify Identity Widget FIRST -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <!-- Link to Decap CMS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/decap-cms@^3.0.0/dist/cms.css" />
+
 </head>
 <body>
-  <!-- Root element for Decap CMS to mount onto -->
+  <!-- Root element for Decap CMS -->
   <div id="nc-root"></div>
 
-  <!-- Load the Decap CMS script (using the older name that might expect nc-root) -->
-  <!-- Place this script AFTER the nc-root div -->
+  <!-- Explicitly register backend before loading CMS -->
+  <script>
+    // Check if CMS is already registered to avoid errors
+    if (window.CMS) {
+      console.log("CMS object exists, attempting registration");
+      // Use Netlify Identity as the auth provider for the GitHub backend
+      window.CMS.registerBackend('github', window.NetlifyCmsBackendGithub.GithubBackend);
+      // Optional: Register Git Gateway if you wanted to switch back easily
+      // window.CMS.registerBackend('git-gateway', window.NetlifyCmsBackendGitGateway.GitGatewayBackend);
+      console.log("Backend registration attempted.");
+    } else {
+        console.warn("CMS object not found before loading main script.");
+    }
+  </script>
+
+  <!-- Load the main Decap CMS script -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
 </body>

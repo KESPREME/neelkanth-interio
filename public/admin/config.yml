@@ -1,7 +1,7 @@
 backend:
   name: github
-  repo: KESPREME/neelkanth-interio # Ensure this is exactly correct
-  branch: main # Ensure this is your deploy branch
+  repo: KESPREME/neelkanth-interio # Make sure this is correct!
+  branch: main # Or your deploy branch
 
 media_folder: "public/images"
 public_folder: "/images"
