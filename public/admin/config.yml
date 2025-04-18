@@ -4,6 +4,8 @@ backend:
   name: git-gateway
   repo: KESPREME/neelkanth-interio
   branch: main # IMPORTANT: Replace 'main' if your deploy branch is different (e.g., 'master')
+  base_url: https://api.netlify.com
+  auth_endpoint: /auth
 
 # REQUIRED: Media and Public Folder configuration.
 # Where images uploaded via the CMS are stored and how they're accessed.
