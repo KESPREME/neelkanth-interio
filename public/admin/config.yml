@@ -1,22 +1,18 @@
 backend:
   name: github
-  repo: KESPREME/neelkanth-interio # Updated repo path
-  branch: main # Branch you deploy from and push to
+  repo: KESPREME/neelkanth-interio # Ensure this is exactly correct
+  branch: main # Ensure this is your deploy branch
 
-# Media files will be stored in 'public/images/uploads'
-# and accessed via '/images/uploads' on the site
 media_folder: "public/images"
 public_folder: "/images"
 
-# Define content collections
 collections:
-  # Materials Collection
-  - name: "materials"           # Used in routes, e.g., /admin/#/collections/materials
-    label: "Materials Library"  # Label shown in the CMS UI
-    folder: "src/data/materials" # Where the CMS saves the data files
-    create: true                # Allow creating new material entries
-    slug: "{{slug}}"            # Filename will be generated from the title field
-    fields:                     # Define the fields for each material entry
+  - name: "materials"
+    label: "Materials Library"
+    folder: "src/data/materials"
+    create: true
+    slug: "{{slug}}"
+    fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Category", name: "category", widget: "select", options: ["hardware", "wallpaper", "pvc-panel", "panel", "tile"] }
       - { label: "Style/Finish", name: "style", widget: "select", options: ["matte-black", "brushed-brass", "polished-nickel", "geometric", "floral", "wood-look", "marble-look", "greenery", "other"], required: false }

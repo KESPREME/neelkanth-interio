@@ -5,25 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager (Admin)</title>
   <link rel="stylesheet" href="https://unpkg.com/decap-cms@^3.0.0/dist/cms.css" />
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <!-- Netlify Identity Widget script is REMOVED from here -->
+  <!-- Decap CMS script will load first -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/cms.js"></script>
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/cms.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-      if (window.location.hash.includes("_token=") || window.location.hash.includes("access_token=")) {
-         console.log("Attempting implicit auth callback...");
-      }
-    } else {
-        console.warn("Netlify Identity widget not found.");
-    }
-  </script>
+  <!-- Add a div for the Netlify Identity widget to attach to if needed -->
+  <div data-netlify-identity-button></div>
+
+  <!-- Script to potentially initialize the widget manually if CMS fails -->
+   <script>
+       // Load Netlify Identity Widget script *after* Decap CMS potentially tries to load
+       const script = document.createElement('script');
+       script.src = "https://identity.netlify.com/v1/netlify-identity-widget.js";
+       script.onload = function() {
+           console.log("Netlify Identity Widget Script Loaded");
+           // Optional: Add manual initialization or listeners here IF NEEDED,
+           // but often just loading it is enough for Decap CMS to potentially interact.
+           // Example (might not be necessary):
+           // if (window.netlifyIdentity) {
+           //   window.netlifyIdentity.on("init", user => {
+           //     console.log("NIW Init:", user);
+           //     if (!user) {
+           //       window.netlifyIdentity.on("login", (user) => {
+           //         console.log("NIW Login:", user);
+           //         document.location.href = "/admin/";
+           //       });
+           //     }
+           //   });
+           // }
+       };
+       document.body.appendChild(script);
+   </script>
 </body>
 </html>
