@@ -5,14 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager (Admin)</title>
   <link rel="stylesheet" href="https://unpkg.com/decap-cms@^3.0.0/dist/cms.css" />
-  <!-- Script to handle GitHub OAuth flow via Netlify -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <!-- Initialize Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/cms.js"></script>
   <script>
-    // Handle OAuth redirection if coming back from GitHub
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
         if (!user) {
