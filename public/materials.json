@@ -4,223 +4,41 @@
     "category": "tile",
     "style": "marble-look",
     "image": "/images/tile-calacatta-gold-large.jpg",
-    "detailPage": "/material-detail-marble-tile.html",
-    "description": "Capture the luxurious beauty of Italian Calacatta Gold marble with the practicality and durability of porcelain. This large-format tile features dramatic grey veining accented with warm golden hues on a luminous white background. Ideal for elegant floors and walls.",
-    "specs": [
-      {
-        "name": "Material",
-        "value": "Porcelain"
-      },
-      {
-        "name": "Finish",
-        "value": "Polished"
-      },
-      {
-        "name": "Size",
-        "value": "600mm x 1200mm"
-      },
-      {
-        "name": "Thickness",
-        "value": "10mm"
-      },
-      {
-        "name": "Edge",
-        "value": "Rectified"
-      }
-    ],
-    "gallery": [
-      {
-        "image": "/images/tile-calacatta-gold-thumb1.jpg",
-        "alt": "Calacatta Gold Tile - Main View"
-      },
-      {
-        "image": "/images/tile-calacatta-gold-thumb2.jpg",
-        "alt": "Calacatta Gold Tile - Veining Detail"
-      },
-      {
-        "image": "/images/tile-calacatta-gold-thumb3.jpg",
-        "alt": "Calacatta Gold Tile - Bathroom"
-      }
-    ]
+    "detailPage": "/material-detail-calacatta-gold-tile.html"
   },
   {
     "title": "Geo Lines Wallpaper",
     "category": "wallpaper",
     "style": "geometric",
     "image": "/images/wallpaper-geo-lines-large.jpg",
-    "detailPage": "/material-detail-geo-wallpaper.html",
-    "description": "Art Deco inspired wallpaper with metallic gold lines on navy. Creates a dynamic and luxurious feature wall. Easy paste-the-wall application.",
-    "specs": [
-      {
-        "name": "Material",
-        "value": "Non-Woven Paper"
-      },
-      {
-        "name": "Repeat",
-        "value": "64cm Straight"
-      },
-      {
-        "name": "Roll Size",
-        "value": "52cm x 10m"
-      }
-    ],
-    "gallery": [
-      {
-        "image": "/images/wallpaper-geo-lines-thumb1.jpg",
-        "alt": "Geo Lines Wallpaper - Main View"
-      },
-      {
-        "image": "/images/wallpaper-geo-lines-thumb2.jpg",
-        "alt": "Geo Lines Wallpaper - Detail"
-      },
-      {
-        "image": "/images/wallpaper-geo-lines-thumb3.jpg",
-        "alt": "Geo Lines Wallpaper - Room"
-      }
-    ]
+    "detailPage": "/material-detail-geo-lines-wallpaper.html"
   },
   {
     "title": "Light Oak Slat Panel",
     "category": "pvc-panel",
     "style": "wood-look",
     "image": "/images/pvc-panel-light-oak.jpg",
-    "detailPage": "/material-detail-pvc-woodpanel.html",
-    "description": "Achieve the warm, textured look of natural wood slats with the durability and ease of maintenance of PVC. Ideal for feature walls.",
-    "specs": [
-      {
-        "name": "Material",
-        "value": "High-Density PVC"
-      },
-      {
-        "name": "Finish",
-        "value": "Light Oak Texture"
-      },
-      {
-        "name": "Panel Size",
-        "value": "120mm x 2900mm x 12mm"
-      }
-    ],
-    "gallery": [
-      {
-        "image": "/images/pvc-panel-light-oak-thumb1.jpg",
-        "alt": "Light Oak Slat PVC Panel - Main View"
-      },
-      {
-        "image": "/images/pvc-panel-light-oak-thumb2.jpg",
-        "alt": "Light Oak Slat PVC Panel - Detail"
-      },
-      {
-        "image": "/images/pvc-panel-light-oak-thumb3.jpg",
-        "alt": "Light Oak Slat PVC Panel - Installation"
-      }
-    ]
+    "detailPage": "/material-detail-light-oak-slat-panel.html"
   },
   {
     "title": "Orb Spherical Knob",
     "category": "hardware",
     "style": "brushed-brass",
     "image": "/images/hardware-orb-knob-bb-large.jpg",
-    "detailPage": "/material-detail-orb-knob.html",
-    "description": "Simple and elegant solid brass spherical knob. Complements various design styles, from mid-century modern to contemporary.",
-    "specs": [
-      {
-        "name": "Material",
-        "value": "Solid Brass"
-      },
-      {
-        "name": "Finish",
-        "value": "Brushed Brass"
-      },
-      {
-        "name": "Diameter",
-        "value": "30mm"
-      }
-    ],
-    "gallery": [
-      {
-        "image": "/images/hardware-orb-knob-bb-thumb1.jpg",
-        "alt": "Orb Spherical Knob - Main View"
-      },
-      {
-        "image": "/images/hardware-orb-knob-bb-thumb2.jpg",
-        "alt": "Orb Spherical Knob - Side"
-      },
-      {
-        "image": "/images/hardware-orb-knob-bb-thumb3.jpg",
-        "alt": "Orb Spherical Knob - On Cabinet"
-      }
-    ]
+    "detailPage": "/material-detail-orb-spherical-knob.html"
   },
   {
     "title": "Vertical Garden Panel",
     "category": "panel",
     "style": "greenery",
     "image": "/images/panel-vertical-garden-large.jpg",
-    "detailPage": "/material-detail-vertical-garden.html",
-    "description": "Instantly bring life and vibrant texture to any interior wall with these realistic artificial vertical garden panels. Featuring a lush mix of foliage, they create a stunning biophilic focal point without the need for maintenance.",
-    "specs": [
-      {
-        "name": "Material",
-        "value": "PE (Polyethylene)"
-      },
-      {
-        "name": "Size",
-        "value": "50cm x 50cm"
-      },
-      {
-        "name": "Features",
-        "value": "UV Resistant (Indoor), Maintenance-Free"
-      }
-    ],
-    "gallery": [
-      {
-        "image": "/images/panel-vertical-garden-thumb1.jpg",
-        "alt": "Vertical Garden Panel - Main View"
-      },
-      {
-        "image": "/images/panel-vertical-garden-thumb2.jpg",
-        "alt": "Vertical Garden Panel - Detail"
-      },
-      {
-        "image": "/images/panel-vertical-garden-thumb3.jpg",
-        "alt": "Vertical Garden Panel - Room"
-      }
-    ]
+    "detailPage": "/material-detail-vertical-garden-panel.html"
   },
   {
     "title": "Vintage Floral Paper",
     "category": "wallpaper",
     "style": "floral",
     "image": "/images/wallpaper-vintage-floral-large.jpg",
-    "detailPage": "/material-detail-floral-wallpaper.html",
-    "description": "Bring romantic, vintage charm to your space with this elegant floral wallpaper. Featuring delicate blooms in muted tones on a soft cream background, it creates a calming and sophisticated atmosphere.",
-    "specs": [
-      {
-        "name": "Material",
-        "value": "Paper (Paste the Paper)"
-      },
-      {
-        "name": "Repeat",
-        "value": "53cm Offset"
-      },
-      {
-        "name": "Roll Size",
-        "value": "53cm x 10m"
-      }
-    ],
-    "gallery": [
-      {
-        "image": "/images/wallpaper-vintage-floral-thumb1.jpg",
-        "alt": "Vintage Floral Wallpaper - Main View"
-      },
-      {
-        "image": "/images/wallpaper-vintage-floral-thumb2.jpg",
-        "alt": "Vintage Floral Wallpaper - Pattern Detail"
-      },
-      {
-        "image": "/images/wallpaper-vintage-floral-thumb3.jpg",
-        "alt": "Vintage Floral Wallpaper - In Room"
-      }
-    ]
+    "detailPage": "/material-detail-vintage-floral-paper.html"
   }
 ]

@@ -1,5 +1,7 @@
 backend:
-  name: git-gateway # Use Netlify Identity's Git Gateway
+  name: github
+  repo: KESPREME/neelkanth-interio # Ensure this is exactly correct
+  branch: main # Or your deploy branch
 
 media_folder: "public/images"
 public_folder: "/images"
@@ -9,13 +11,13 @@ collections:
     label: "Materials Library"
     folder: "src/data/materials"
     create: true
-    slug: "{{slug}}"
+    slug: "{{slug}}" # Filename uses the title/slug
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Category", name: "category", widget: "select", options: ["hardware", "wallpaper", "pvc-panel", "panel", "tile"] }
       - { label: "Style/Finish", name: "style", widget: "select", options: ["matte-black", "brushed-brass", "polished-nickel", "geometric", "floral", "wood-look", "marble-look", "greenery", "other"], required: false }
       - { label: "Featured Image (Grid)", name: "image", widget: "image" }
-      - { label: "Detail Page URL", name: "detailPage", widget: "string", hint: "e.g., /material-detail-orb-knob.html. Ensure this page exists!"}
+      # - { label: "Detail Page URL", name: "detailPage", widget: "string" } # REMOVED this field
       - { label: "Description", name: "description", widget: "markdown", required: false }
       - { label: "Specifications", name: "specs", widget: "list", required: false, fields: [
           { label: "Spec Name", name: "name", widget: "string"},
@@ -25,3 +27,5 @@ collections:
            { label: "Image", name: "image", widget: "image"},
            { label: "Alt Text", name: "alt", widget: "string"}
          ] }
+      # Add a field for the main detail page image if different from grid image
+      - { label: "Main Detail Image", name: "mainDetailImage", widget: "image", required: false }
