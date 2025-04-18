@@ -1,7 +1,5 @@
 backend:
-  name: github
-  repo: KESPREME/neelkanth-interio # Make sure this is correct!
-  branch: main # Or your deploy branch
+  name: git-gateway # Use Netlify Identity's Git Gateway
 
 media_folder: "public/images"
 public_folder: "/images"
