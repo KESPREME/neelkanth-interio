@@ -4,19 +4,13 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-
     <title>About Us - Neelkanth Interio</title>
-
 </head>
 <body>
     <div id="app">
-
-        <!-- =========== HEADER (with Mobile Button) =========== -->
         <header class="site-header">
             <div class="container header-container">
                 <a href="/" class="logo">
@@ -29,12 +23,10 @@
                         <li><a href="/services.html">Services</a></li>
                         <li><a href="/portfolio.html">Portfolio</a></li>
                         <li><a href="/design-tools.html">Design Tools</a></li>
+                        <li><a href="/materials-library.html">Materials</a></li>
                         <li><a href="/contact.html">Contact</a></li>
                     </ul>
                 </nav>
-                
-                
-
                 <button class="mobile-menu-button" aria-label="Toggle Menu" aria-expanded="false">
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
@@ -63,7 +55,7 @@
                         <p><strong>Vision:</strong> To be the leading interior design firm known for creativity, integrity, and unwavering commitment to client satisfaction.</p>
                     </div>
                     <div class="about-image" data-aos="fade-left" data-aos-delay="200">
-                        <img src="/images/about-placeholder.jpg" alt="Neelkanth Interio design process or team">
+                        <img src="/logo.png" alt="Neelkanth Interio design process or team aesthetic">
                     </div>
                 </div>
             </section>
@@ -101,7 +93,28 @@
                 </div>
             </section>
 
-             <section class="team-section" data-aos="fade-up">
+            <!-- ================== -->
+            <!-- Materials Matter Section (NEW) -->
+            <!-- ================== -->
+            <section class="materials-matter-section" style="background-color: var(--white);" data-aos="fade-up">
+                 <div class="container about-grid">
+                     <div class="materials-image" data-aos="fade-right" data-aos-delay="200">
+                         <img src="/images/about-materials.jpg" alt="Collage of high-quality interior design materials like wood, fabric, stone, and hardware">
+                     </div>
+                     <div class="materials-text" data-aos="fade-left" data-aos-delay="100">
+                         <h2>Materials Matter: The Foundation of Feel</h2>
+                         <p>The true character of an interior space comes alive through the thoughtful selection of materials. Beyond visual appeal, the right finishes contribute to the tactile experience, durability, and overall atmosphere of your home.</p>
+                         <p>We believe in sourcing high-quality, beautiful materials – from distinctive hardware and elegant wallpapers to durable flooring and unique paneling. Our curated <a href="/materials-library.html">Materials Library</a> showcases options we trust and recommend, simplifying the selection process for our clients.</p>
+                         <p>Choosing the perfect combination of textures and finishes is integral to our design process, ensuring every detail aligns with your vision and enhances the final outcome.</p>
+                          <div style="margin-top: 30px;">
+                             <a href="/materials-library.html" class="button">Explore Our Library</a>
+                         </div>
+                     </div>
+                 </div>
+            </section>
+
+
+             <section class="team-section" style="background-color: var(--neutral-light);" data-aos="fade-up">
                  <div class="container">
                     <h2 class="text-center">Meet the Team</h2>
                     <p class="text-center" style="max-width: 600px; margin: 0 auto 40px auto;">The creative minds behind Neelkanth Interio.</p>
@@ -109,20 +122,18 @@
                          <div class="team-member-card" data-aos="zoom-in" data-aos-delay="100">
                              <img src="/images/team-placeholder-1.jpg" alt="Manish Gupta">
                              <h4>Manish Gupta</h4>
-                             <p>Lead Designer</p>
+                             <p>Chief Execeutive Officer & Chief Administrative Officer (CEO&CAO)</p>
                          </div>
                          <div class="team-member-card" data-aos="zoom-in" data-aos-delay="200">
                               <img src="/images/team-placeholder-2.jpg" alt="Ritu Gupta">
                              <h4>Ritu Gupta</h4>
-                             <p>Project Manager</p>
+                             <p>President</p>
                          </div>
                     </div>
                  </div>
             </section>
 
         </main>
-
-        <!-- =========== FOOTER (Same as other pages) =========== -->
         <footer class="site-footer">
             <div class="container">
                 <p>© 2023 Neelkanth Interio. All rights reserved.</p>
@@ -133,9 +144,7 @@
                 </div>
             </div>
         </footer>
-
-    </div> <!-- End of #app -->
-
+    </div>
     <script type="module" src="/src/main.js"></script>
 </body>
 </html>

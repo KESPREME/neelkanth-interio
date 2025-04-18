@@ -146,6 +146,284 @@ document.addEventListener('DOMContentLoaded', () => {
        console.warn("Style Quiz elements (steps, progress indicators) not fully found. Quiz JS not initialized.");
   }
   // === End Style Quiz Logic ===
+  // Inside document.addEventListener('DOMContentLoaded', () => { ... });
 
+  // === Materials Library Multi-Group Filtering Logic ===
+  // Renamed from Hardware Collection Logic
+  const materialsFilterControls = document.querySelectorAll('.hardware-filters'); // Still use this class for containers
+  const materialItems = document.querySelectorAll('.hardware-item-card'); // Still use this class for items
+
+  const activeMaterialFilters = {
+      category: 'all', // Changed from 'type'
+      style: 'all'     // Changed from 'finish'
+  };
+
+  if (materialsFilterControls.length > 0 && materialItems.length > 0) {
+      console.log("Initializing Materials Library Filtering");
+
+      materialsFilterControls.forEach(filterGroupContainer => {
+          filterGroupContainer.addEventListener('click', (event) => {
+              if (event.target.classList.contains('filter-button')) {
+                  const clickedButton = event.target;
+                  const filterGroup = clickedButton.dataset.filterGroup; // 'category' or 'style'
+                  const filterValue = clickedButton.dataset.filter;    // e.g., 'hardware', 'wallpaper', 'matte-black'
+
+                  if(activeMaterialFilters.hasOwnProperty(filterGroup)){ // Check if group exists
+                      activeMaterialFilters[filterGroup] = filterValue;
+                      console.log("Active Material Filters:", activeMaterialFilters);
+
+                      const buttonsInGroup = filterGroupContainer.querySelectorAll('.filter-button');
+                      buttonsInGroup.forEach(btn => btn.classList.remove('active'));
+                      clickedButton.classList.add('active');
+
+                      filterMaterialItems();
+                  } else {
+                      console.warn("Filter group not recognized:", filterGroup);
+                  }
+              }
+          });
+      });
+
+      function filterMaterialItems() {
+          materialItems.forEach(item => {
+              const itemCategory = item.dataset.category; // Read category attribute
+              const itemStyle = item.dataset.style;       // Read style/finish attribute
+
+              // Check if item matches the active filter in EACH group
+              const categoryMatch = activeMaterialFilters.category === 'all' || itemCategory === activeMaterialFilters.category;
+              const styleMatch = activeMaterialFilters.style === 'all' || itemStyle === activeMaterialFilters.style;
+
+              // Item must match filters in ALL groups to be shown
+              if (categoryMatch && styleMatch) {
+                  item.classList.remove('hide');
+                  // item.style.display = 'block'; // Alternative
+              } else {
+                  item.classList.add('hide');
+                  // item.style.display = 'none'; // Alternative
+              }
+          });
+      }
+
+      // Optional: Initial filter application if needed
+      // filterMaterialItems();
+
+  } else if (document.querySelector('.hardware-items-grid')){
+      console.warn("Materials filter controls or items not found. Filtering not initialized.");
+  }
+  // === End Materials Library Filtering Logic ===
+
+// ... (rest of the code) ...
+
+// }); // End of DOMContentLoaded
+
+// Inside document.addEventListener('DOMContentLoaded', () => { ... });
+
+  // === Project Estimator Logic ===
+  const estimatorForm = document.getElementById('estimator-form');
+  const resultDisplayContainer = document.getElementById('estimator-result');
+  const rangeDisplayElement = document.getElementById('estimated-range-display');
+  const formStatusElement = document.getElementById('estimator-form-status'); // For potential messages
+
+  if (estimatorForm && resultDisplayContainer && rangeDisplayElement) {
+    console.log("Initializing Project Estimator");
+
+    estimatorForm.addEventListener('submit', function(event) {
+      
+      formStatusElement.textContent = 'Calculating...'; // Indicate activity
+      formStatusElement.className = 'form-status'; // Reset classes
+
+      // --- 1. Get Form Values ---
+      const roomType = document.getElementById('room-type')?.value;
+      const roomSize = document.getElementById('room-size')?.value;
+      const projectScope = document.getElementById('project-scope')?.value;
+      const qualityLevel = document.getElementById('quality-level')?.value;
+
+      // Basic validation - ensure all fields are selected
+      if (!roomType || !roomSize || !projectScope || !qualityLevel) {
+        formStatusElement.textContent = 'Please fill out all project detail fields.';
+        formStatusElement.className = 'form-status error';
+        // Hide result container if shown previously
+        resultDisplayContainer.style.display = 'none';
+        return; // Stop processing
+      }
+
+      // --- 2. Simplified Calculation Logic ---
+      // IMPORTANT: These are *example* multipliers. Adjust significantly based on your business!
+      let baseCost = 1000; // A starting point
+      let sizeMultiplier = 1;
+      let scopeMultiplier = 1;
+      let qualityMultiplier = 1;
+      let roomMultiplier = 1;
+
+      // Size Multipliers
+      switch (roomSize) {
+        case 'small': sizeMultiplier = 0.8; break;
+        case 'medium': sizeMultiplier = 1.0; break;
+        case 'large': sizeMultiplier = 1.5; break;
+        case 'xlarge': sizeMultiplier = 2.2; break;
+        case 'multi-room': sizeMultiplier = 4.0; break; // Significantly more for multi-room
+      }
+
+      // Scope Multipliers
+      switch (projectScope) {
+        case 'decor': scopeMultiplier = 1.0; break;
+        case 'minor-reno': scopeMultiplier = 2.5; break;
+        case 'major-reno': scopeMultiplier = 5.0; break;
+        case 'new-build': scopeMultiplier = 7.0; break;
+      }
+
+      // Quality Multipliers
+      switch (qualityLevel) {
+        case 'standard': qualityMultiplier = 1.0; break;
+        case 'premium': qualityMultiplier = 1.8; break;
+        case 'luxury': qualityMultiplier = 3.0; break;
+      }
+
+       // Room Type Base Adjustment (e.g., Kitchens/Baths cost more inherently)
+       switch (roomType) {
+         case 'kitchen': roomMultiplier = 1.8; baseCost = 2000; break;
+         case 'bathroom': roomMultiplier = 1.5; baseCost = 1500; break;
+         case 'full-home': roomMultiplier = 1.2; baseCost = 3000; break; // Base higher for full home
+         // other rooms use default
+       }
+
+       // Combine multipliers - This is highly simplified!
+       const calculatedLow = baseCost * roomMultiplier * sizeMultiplier * scopeMultiplier * qualityMultiplier;
+       const calculatedHigh = calculatedLow * 1.6; // Example: High range is 60% more
+
+       // --- 3. Format and Display Result ---
+       // Basic currency formatting
+       const formatter = new Intl.NumberFormat('en-US', {
+           style: 'currency',
+           currency: 'INR', // Change currency code if needed
+           minimumFractionDigits: 0, // Remove cents for cleaner estimate
+           maximumFractionDigits: 0,
+       });
+
+       const displayRange = `${formatter.format(calculatedLow)} - ${formatter.format(calculatedHigh)}`;
+       rangeDisplayElement.textContent = displayRange;
+       resultDisplayContainer.style.display = 'block'; // Show the result container
+       formStatusElement.textContent = ''; // Clear "Calculating..." message
+
+       console.log("Estimate Calculated:", displayRange);
+       formStatusElement.textContent = 'Submitting your inquiry...'; // Update status
+
+      // --- 4. Handle Actual Form Submission (if needed) ---
+      // If using Netlify Forms or similar that rely on standard submission:
+      // Option A: Submit after a short delay (simplest)
+      // setTimeout(() => {
+      //     console.log("Submitting form data...");
+      //     estimatorForm.submit(); // Submit the form normally after showing estimate
+      // }, 500); // Short delay
+
+      // Option B: Use Fetch API (AJAX) for background submission (more complex, better UX)
+      // This prevents page reload and allows for better status messages.
+      // See Fetch API documentation - would require more setup.
+      // For now, we'll rely on the default action after the estimate shows (or use Option A).
+      // If NOT using Netlify/Formspree, you'd handle the AJAX submission here.
+
+
+    }); // End of submit listener
+  } else if (document.getElementById('estimator-form')) {
+      console.warn("Estimator result display elements not found. Estimator calculation disabled.");
+  }
+  // === End Project Estimator Logic ===
+
+
+// ... (rest of the code like AOS init, etc.) ...
+
+// Inside document.addEventListener('DOMContentLoaded', () => { ... });
+
+  // === Simple Lightbox Logic ===
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightbox-image');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
+  const closeButton = document.querySelector('.lightbox-close');
+  const prevButton = document.querySelector('.lightbox-prev');
+  const nextButton = document.querySelector('.lightbox-next');
+
+  let currentImageIndex = 0;
+  let galleryImages = []; // To store images of the current gallery
+
+  if (lightbox && lightboxImage && lightboxTriggers.length > 0 && closeButton && prevButton && nextButton) {
+    console.log("Initializing Lightbox");
+
+    // Function to open the lightbox
+    function openLightbox(index) {
+        if (index < 0 || index >= galleryImages.length) return; // Boundary check
+        currentImageIndex = index;
+        lightboxImage.src = galleryImages[currentImageIndex].src;
+        lightboxImage.alt = galleryImages[currentImageIndex].alt;
+        lightboxCaption.textContent = galleryImages[currentImageIndex].alt; // Use alt text as caption
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scroll
+    }
+
+    // Function to close the lightbox
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scroll
+    }
+
+    // Function to show the next image
+    function showNextImage() {
+        openLightbox((currentImageIndex + 1) % galleryImages.length); // Wrap around
+    }
+
+    // Function to show the previous image
+    function showPrevImage() {
+        openLightbox((currentImageIndex - 1 + galleryImages.length) % galleryImages.length); // Wrap around
+    }
+
+    // Add click listeners to all triggers
+    lightboxTriggers.forEach((trigger, index) => {
+      // Build the galleryImages array from the triggers on the current page
+      const imgElement = trigger.querySelector('img');
+      if(imgElement) {
+          galleryImages.push({ src: trigger.href, alt: imgElement.alt });
+      }
+
+      trigger.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent default link navigation
+        openLightbox(index);
+      });
+    });
+
+    // Add listeners for controls
+    closeButton.addEventListener('click', closeLightbox);
+    nextButton.addEventListener('click', showNextImage);
+    prevButton.addEventListener('click', showPrevImage);
+
+    // Close lightbox on clicking the overlay background
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) { // Only if clicking the overlay itself
+        closeLightbox();
+      }
+    });
+
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && lightbox.classList.contains('active')) {
+            closeLightbox();
+        }
+        // Optional: Arrow key navigation
+        if (lightbox.classList.contains('active')) {
+            if (event.key === 'ArrowRight') {
+                showNextImage();
+            } else if (event.key === 'ArrowLeft') {
+                showPrevImage();
+            }
+        }
+    });
+
+  } else if (document.querySelector('.gallery-grid')) { // Only log error if gallery exists but lightbox parts don't
+      console.warn("Lightbox elements not fully found. Lightbox functionality disabled.");
+  }
+  // === End Simple Lightbox Logic ===
+
+// ... (rest of the code like AOS init, etc.) ...
+
+// }); // End of DOMContentLoaded
 
 }); // End of DOMContentLoaded

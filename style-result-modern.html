@@ -4,48 +4,145 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
     <title>Your Style: Modern - Neelkanth Interio</title>
+
 </head>
 <body>
     <div id="app">
-         <!-- =========== HEADER =========== -->
-         <header class="site-header">
+
+        <!-- =========== HEADER (Consistent across pages) =========== -->
+        <header class="site-header">
             <div class="container header-container">
-                <a href="/" class="logo"><img src="/logo.png" alt="Neelkanth Interio Logo" class="logo-image"></a>
+                <a href="/" class="logo">
+                    <img src="/logo.png" alt="Neelkanth Interio Logo" class="logo-image">
+                </a>
                 <nav class="main-navigation">
-                    <ul><li><a href="/">Home</a></li><li><a href="/about.html">About</a></li><li><a href="/services.html">Services</a></li><li><a href="/portfolio.html">Portfolio</a></li><li><a href="/design-tools.html">Design Tools</a></li><li><a href="/contact.html">Contact</a></li></ul>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/portfolio.html">Portfolio</a></li>
+                        <li><a href="/design-tools.html">Design Tools</a></li>
+                        <li><a href="/materials-library.html">Hardware</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
                 </nav>
-                <button class="mobile-menu-button" aria-label="Toggle Menu" aria-expanded="false"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+                <button class="mobile-menu-button" aria-label="Toggle Menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
             </div>
         </header>
 
+        <!-- =========== MAIN CONTENT (Unique to Style Result Page) =========== -->
         <main id="main-content">
-            <section class="page-header-section" style="background-color: var(--neutral-light); padding: 40px 0; text-align: center;">
-                <div class="container"><h1>Your Style Result</h1></div>
-            </section>
-            <section class="quiz-result-section">
-                <div class="container" style="max-width: 800px; text-align: center;">
-                    <h2 style="color: var(--primary-color); font-size: 2rem;">You lean towards a Modern Style!</h2>
-                    <img src="/images/result-modern.jpg" alt="Modern Style Example" style="width: 100%; max-width: 500px; margin: 20px auto; border-radius: 8px;">
-                    <p style="font-size: 1.1rem; line-height: 1.7;">Characterized by clean lines, simple forms, neutral color palettes with occasional bold accents, and materials like metal, glass, and steel. Modern design prioritizes functionality and avoids excessive ornamentation, creating a feeling of calm sophistication.</p>
-                    <h3>Next Steps:</h3>
-                    <p>Explore projects in our portfolio that showcase the Modern style:</p>
-                    
-                    <a href="/portfolio.html?filter=modern" class="button" style="margin: 5px;">View Modern Projects</a>
-                    <p style="margin-top: 20px;">Ready to discuss how we can bring a Modern vision to your space?</p>
-                    <a href="/contact.html" class="button" style="margin: 5px;">Book a Consultation</a>
+
+             <section class="page-header-section" style="background-color: var(--neutral-light); padding: 40px 0; text-align: center;" data-aos="fade-in">
+                <div class="container">
+                    <p style="color: var(--secondary-color); font-weight: bold; margin-bottom: 5px;">Style Quiz Result</p>
+                    <h1>Your Style Profile: Modern</h1>
+                    <p style="font-size: 1.1rem; color: #555;">Clean lines, sophisticated palettes, and functionality define your preferred aesthetic.</p>
                 </div>
             </section>
+
+            <!-- Style Description Section -->
+            <section class="style-description-section">
+                <div class="container style-result-grid">
+                    <div class="style-text" data-aos="fade-right">
+                        <h2>Understanding Modern Style</h2>
+                        <p>Modern design emphasizes simplicity, clean lines, and a lack of clutter. It often features neutral color palettes (grays, whites, blacks, beiges) punctuated by bold accent colors or metallic finishes (like chrome, steel, or nickel).</p>
+                        <p>Furniture typically has simple forms, often low-profile, with materials like metal, glass, and smooth wood being prominent. Functionality is key, and spaces are designed to feel open, airy, and intentional. You appreciate uncluttered surfaces and well-defined spaces.</p>
+                        <h4>Key Characteristics:</h4>
+                        <ul>
+                            <li>Clean, straight lines</li>
+                            <li>Neutral base colors with bold accents</li>
+                            <li>Emphasis on natural light and open space</li>
+                            <li>Minimal ornamentation and clutter</li>
+                            <li>Use of materials like metal, glass, steel, and smooth wood</li>
+                            <li>Functional and intentional furniture pieces</li>
+                        </ul>
+                    </div>
+                    <div class="style-image" data-aos="fade-left" data-aos-delay="100">
+                        <img src="/images/result-modern.jpg" alt="Example of a Modern interior design style">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Relevant Portfolio Projects -->
+            <section class="relevant-portfolio-section" style="background-color: var(--neutral-light);" data-aos="fade-up">
+                 <div class="container">
+                    <h2 class="text-center">Explore Modern Projects</h2>
+                    <p class="text-center" style="max-width: 600px; margin: -20px auto 40px auto; color: #666;">See how we've brought the Modern style to life for our clients.</p>
+                     
+                     <div class="portfolio-items-grid related-projects-grid">
+                         
+                         <div class="portfolio-item-card" data-aos="fade-up" data-aos-delay="100">
+                            <a href="/portfolio-detail-modern-apt.html">
+                                <img src="/images/portfolio-modern-apt.jpg" alt="Modern City Apartment Living Room">
+                                <div class="portfolio-item-caption">
+                                    <h4>Modern City Apartment</h4>
+                                    <p>Living Room / Modern</p>
+                                </div>
+                            </a>
+                        </div>
+                         <div class="portfolio-item-card" data-aos="fade-up" data-aos-delay="200">
+                             <a href="/portfolio-detail-luxury-villa.html">
+                                <img src="/images/portfolio-luxury-villa.jpg" alt="Luxury Villa Kitchen">
+                                <div class="portfolio-item-caption">
+                                    <h4>Luxury Villa Kitchen</h4>
+                                    <p>Kitchen / Modern</p>
+                                </div>
+                            </a>
+                        </div>
+                        
+                         <div class="portfolio-item-card" data-aos="fade-up" data-aos-delay="300">
+                             <a href="#"> 
+                                <img src="/images/portfolio-placeholder-modern-2.jpg" alt="Another Modern Project">
+                                <div class="portfolio-item-caption">
+                                    <h4>Sleek Home Office</h4>
+                                    <p>Home Office / Modern</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="text-center" style="margin-top: 40px;">
+                        <a href="/portfolio.html?filter=modern" class="button">View All Modern Projects</a>
+                    </div>
+                 </div>
+            </section>
+
+            <!-- Next Steps / CTA -->
+            <section class="next-steps-cta" data-aos="zoom-in">
+                 <div class="container text-center">
+                    <h2>Ready to Create Your Modern Space?</h2>
+                    <p>Let's discuss how we can incorporate the clean lines and sophisticated feel of Modern design into your home.</p>
+                    <a href="/contact.html?style=Modern" class="button cta-button">Schedule a Consultation</a>
+                 </div>
+            </section>
+
         </main>
 
-        <!-- =========== FOOTER =========== -->
+        <!-- =========== FOOTER (Consistent across pages) =========== -->
         <footer class="site-footer">
-            <div class="container"><p>© 2023 Neelkanth Interio. All rights reserved.</p><div class="social-links"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">i</a><a href="#" aria-label="LinkedIn">l</a></div></div>
+            <div class="container">
+                <p>© 2023 Neelkanth Interio. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">i</a>
+                    <a href="#" aria-label="LinkedIn">l</a>
+                </div>
+            </div>
         </footer>
-    </div>
+
+    </div> <!-- End of #app -->
+
     <script type="module" src="/src/main.js"></script>
 </body>
 </html>

@@ -29,6 +29,7 @@
                         <li><a href="/services.html">Services</a></li>
                         <li><a href="/portfolio.html">Portfolio</a></li>
                         <li><a href="/design-tools.html">Design Tools</a></li>
+                        <li><a href="/materials-library.html">Hardware</a></li>
                         <li><a href="/contact.html">Contact</a></li>
                     </ul>
                 </nav>
@@ -83,8 +84,11 @@
 
                     <div class="contact-form-container" data-aos="fade-left" data-aos-delay="200">
                         <h3>Send Us a Message</h3>
-                        <form id="contact-form" class="contact-form" name="contact" method="POST">
+                        
+                        <form id="contact-form" class="contact-form" name="contact" method="POST" data-netlify="true">
+                             
                             <input type="hidden" name="form-name" value="contact" />
+    
                             <div class="form-group">
                                 <label for="name">Name:</label>
                                 <input type="text" id="name" name="name" required>

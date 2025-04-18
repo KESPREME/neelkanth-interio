@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Vertical Garden Panel - Materials Library - Neelkanth Interio</title>
+</head>
+<body>
+    <div id="app">
+        <header class="site-header">
+             <div class="container header-container">
+                <a href="/" class="logo">
+                    <img src="/logo.png" alt="Neelkanth Interio Logo" class="logo-image">
+                </a>
+                <nav class="main-navigation">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/portfolio.html">Portfolio</a></li>
+                        <li><a href="/design-tools.html">Design Tools</a></li>
+                        <li><a href="/materials-library.html">Materials</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle Menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <main id="main-content">
+             <section class="page-header-section minimal-header" style="background-color: var(--neutral-light); padding: 25px 0;">
+                <div class="container">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/materials-library.html">Materials Library</a></li>
+                            <li class="breadcrumb-item"><a href="/materials-library.html?filter=panel">Panels</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Vertical Garden Panel</li>
+                        </ol>
+                    </nav>
+                </div>
+            </section>
+
+            <section class="hardware-detail-section material-detail-panel">
+                <div class="container hardware-detail-grid">
+                    <div class="hardware-image-gallery" data-aos="fade-in">
+                        <div class="main-image-container">
+                            <img id="mainHardwareImage" src="/images/panel-vertical-garden-large.jpg" alt="Vertical Garden Wall Panel - Main View">
+                        </div>
+                        <div class="thumbnail-images">
+                            <img src="/images/panel-vertical-garden-thumb1.jpg" alt="Vertical Garden Thumbnail 1" class="active" onclick="document.getElementById('mainHardwareImage').src='/images/panel-vertical-garden-thumb1.jpg'">
+                            <img src="/images/panel-vertical-garden-thumb2.jpg" alt="Vertical Garden Thumbnail 2 - Detail" onclick="document.getElementById('mainHardwareImage').src='/images/panel-vertical-garden-thumb2.jpg'">
+                            <img src="/images/panel-vertical-garden-thumb3.jpg" alt="Vertical Garden Thumbnail 3 - Room" onclick="document.getElementById('mainHardwareImage').src='/images/panel-vertical-garden-thumb3.jpg'">
+                        </div>
+                    </div>
+                    <div class="hardware-info-details" data-aos="fade-left" data-aos-delay="100">
+                        <h1>Artificial Vertical Garden Panel</h1>
+                        <p class="hardware-meta">Type: Decorative Panel | Style: Greenery</p>
+                        <div class="hardware-description">
+                            <p>Instantly bring life and vibrant texture to any interior wall with these realistic artificial vertical garden panels. Featuring a lush mix of foliage, they create a stunning biophilic focal point without the need for maintenance.</p>
+                            <p>Easy to install and connect, these panels are perfect for enhancing reception areas, living room feature walls, office spaces, or balconies, adding a touch of nature indoors.</p>
+                        </div>
+                        <div class="hardware-specifications">
+                            <h4>Specifications:</h4>
+                            <ul>
+                                <li><strong>Material:</strong> High-Quality PE (Polyethylene)</li>
+                                <li><strong>Foliage Type:</strong> Mixed Ferns, Boxwood, Grasses (Varies by model)</li>
+                                <li><strong>Panel Size:</strong> 50cm x 50cm (Approx.)</li>
+                                <li><strong>Backing:</strong> Flexible Grid Mesh</li>
+                                <li><strong>Installation:</strong> Cable ties, screws, or adhesive</li>
+                                <li><strong>Features:</strong> UV Resistant (Indoor Rated), Maintenance-Free</li>
+                            </ul>
+                        </div>
+                        <div class="hardware-cta">
+                            <h4>Bring Nature Indoors?</h4>
+                            <p>Discuss adding a touch of green with vertical garden panels in your design.</p>
+                            <a href="/contact.html?subject=Inquiry%20about%20Vertical%20Garden%20Panels" class="button">Contact a Designer</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+             <div class="container">
+                <p>© 2023 Neelkanth Interio. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">f</a> <a href="#" aria-label="Instagram">i</a> <a href="#" aria-label="LinkedIn">l</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const thumbnails = document.querySelectorAll('.thumbnail-images img');
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', () => {
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    thumb.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

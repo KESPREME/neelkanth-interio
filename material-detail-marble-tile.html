@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Calacatta Gold Tile - Materials Library - Neelkanth Interio</title>
+</head>
+<body>
+    <div id="app">
+        <header class="site-header">
+            <div class="container header-container">
+                <a href="/" class="logo">
+                    <img src="/logo.png" alt="Neelkanth Interio Logo" class="logo-image">
+                </a>
+                <nav class="main-navigation">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/portfolio.html">Portfolio</a></li>
+                        <li><a href="/design-tools.html">Design Tools</a></li>
+                        <li><a href="/materials-library.html">Materials</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle Menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <main id="main-content">
+             <section class="page-header-section minimal-header" style="background-color: var(--neutral-light); padding: 25px 0;">
+                <div class="container">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/materials-library.html">Materials Library</a></li>
+                            <li class="breadcrumb-item"><a href="/materials-library.html">Tiles</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Calacatta Gold Tile</li>
+                        </ol>
+                    </nav>
+                </div>
+            </section>
+
+            <section class="hardware-detail-section material-detail-tile">
+                <div class="container hardware-detail-grid">
+                    <div class="hardware-image-gallery" data-aos="fade-in">
+                        <div class="main-image-container">
+                            <img id="mainHardwareImage" src="/images/tile-calacatta-gold-large.jpg" alt="Calacatta Gold Porcelain Tile - Main View">
+                        </div>
+                        <div class="thumbnail-images">
+                            <img src="/images/tile-calacatta-gold-thumb1.jpg" alt="Calacatta Tile Thumbnail 1" class="active" onclick="document.getElementById('mainHardwareImage').src='/images/tile-calacatta-gold-thumb1.jpg'">
+                            <img src="/images/tile-calacatta-gold-thumb2.jpg" alt="Calacatta Tile Thumbnail 2 - Veining Detail" onclick="document.getElementById('mainHardwareImage').src='/images/tile-calacatta-gold-thumb2.jpg'">
+                            <img src="/images/tile-calacatta-gold-thumb3.jpg" alt="Calacatta Tile Thumbnail 3 - Bathroom" onclick="document.getElementById('mainHardwareImage').src='/images/tile-calacatta-gold-thumb3.jpg'">
+                        </div>
+                    </div>
+                    <div class="hardware-info-details" data-aos="fade-left" data-aos-delay="100">
+                        <h1>Calacatta Gold Porcelain Tile</h1>
+                        <p class="hardware-meta">Type: Tile | Style: Marble Look</p>
+                        <div class="hardware-description">
+                            <p>Capture the luxurious beauty of Italian Calacatta Gold marble with the practicality and durability of porcelain. This large-format tile features dramatic grey veining accented with warm golden hues on a luminous white background.</p>
+                            <p>Ideal for creating elegant floors, stunning feature walls, shower surrounds, and backsplashes in both classic and contemporary interiors.</p>
+                        </div>
+                        <div class="hardware-specifications">
+                            <h4>Specifications:</h4>
+                            <ul>
+                                <li><strong>Material:</strong> Porcelain</li>
+                                <li><strong>Finish:</strong> Polished (Also available in Matte)</li>
+                                <li><strong>Size:</strong> 600mm x 1200mm (Also available in 600x600, 300x600)</li>
+                                <li><strong>Thickness:</strong> 10mm</li>
+                                <li><strong>Edge:</strong> Rectified</li>
+                                <li><strong>Application:</strong> Floor & Wall (Interior)</li>
+                                <li><strong>PEI Rating:</strong> 4 (Moderate to Heavy Traffic)</li>
+                            </ul>
+                        </div>
+                        <div class="hardware-cta">
+                            <h4>Considering This Tile?</h4>
+                            <p>Discuss using Calacatta Gold porcelain tile to bring timeless luxury to your space.</p>
+                            <a href="/contact.html?subject=Inquiry%20about%20Calacatta%20Gold%20Tile" class="button">Contact a Designer</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <p>© 2023 Neelkanth Interio. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">f</a> <a href="#" aria-label="Instagram">i</a> <a href="#" aria-label="LinkedIn">l</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const thumbnails = document.querySelectorAll('.thumbnail-images img');
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', () => {
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    thumb.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

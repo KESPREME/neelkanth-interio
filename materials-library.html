@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Materials Library - Neelkanth Interio</title>
+</head>
+<body>
+    <div id="app">
+
+        <header class="site-header">
+            <div class="container header-container">
+                <a href="/" class="logo">
+                    <img src="/logo.png" alt="Neelkanth Interio Logo" class="logo-image">
+                </a>
+                <nav class="main-navigation">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/portfolio.html">Portfolio</a></li>
+                        <li><a href="/design-tools.html">Design Tools</a></li>
+                        <li><a href="/materials-library.html">Materials</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle Menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <main id="main-content">
+
+            <section class="page-header-section" style="background-color: var(--neutral-light); padding: 40px 0; text-align: center;" data-aos="fade-in">
+                <div class="container">
+                    <h1>Curated Materials Library</h1>
+                    <p style="font-size: 1.1rem; color: #555;">Explore hardware, wall coverings, panels, and more hand-selected finishes.</p>
+                </div>
+            </section>
+
+            <section class="hardware-filter-section" style="padding-top: 40px; padding-bottom: 20px;" data-aos="fade-up">
+                <div class="container">
+                    <div class="filter-controls hardware-filters">
+                        <span style="margin-right: 15px; font-weight: bold;">Filter by Category:</span>
+                        <button class="filter-button active" data-filter="all" data-filter-group="category">All</button>
+                        <button class="filter-button" data-filter="hardware" data-filter-group="category">Hardware</button>
+                        <button class="filter-button" data-filter="wallpaper" data-filter-group="category">Wallpaper</button>
+                        <button class="filter-button" data-filter="pvc-panel" data-filter-group="category">PVC Panels</button>
+                        <button class="filter-button" data-filter="tile" data-filter-group="category">Tiles</button>
+                    </div>
+                    <div class="filter-controls hardware-filters" style="margin-top: 15px;">
+                         <span style="margin-right: 15px; font-weight: bold;">Filter by Style/Finish:</span>
+                        <button class="filter-button active" data-filter="all" data-filter-group="style">All</button>
+                        <button class="filter-button" data-filter="matte-black" data-filter-group="style">Matte Black</button>
+                        <button class="filter-button" data-filter="brushed-brass" data-filter-group="style">Brushed Brass</button>
+                        <button class="filter-button" data-filter="geometric" data-filter-group="style">Geometric</button>
+                        <button class="filter-button" data-filter="floral" data-filter-group="style">Floral</button>
+                        <button class="filter-button" data-filter="wood-look" data-filter-group="style">Wood Look</button>
+                        <button class="filter-button" data-filter="marble-look" data-filter-group="style">Marble Look</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="hardware-listing-section" style="padding-top: 20px;">
+                <div class="container">
+                    <div class="hardware-items-grid">
+
+                        
+                        <div class="hardware-item-card" data-category="panel" data-style="greenery">
+                            <a href="/material-detail-vertical-garden.html">
+                                <img src="/images/panel-vertical-garden-large.jpg" alt="Mixed Foliage Vertical Garden Panel">
+                                <div class="hardware-item-caption">
+                                    <h4>Vertical Garden Panel</h4>
+                                    <p>Panel / Greenery</p>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class="hardware-item-card" data-category="wallpaper" data-style="geometric">
+                             <a href="/material-detail-geo-wallpaper.html">
+                                <img src="/images/wallpaper-geo-lines-large.jpg" alt="Geometric Lines Wallpaper - Gold/Navy">
+                                <div class="hardware-item-caption">
+                                    <h4>Geo Lines Wallpaper</h4>
+                                    <p>Wallpaper / Geometric</p>
+                                </div>
+                            </a>
+                        </div>
+
+                         
+                        <div class="hardware-item-card" data-category="pvc-panel" data-style="wood-look">
+                             <a href="/material-detail-pvc-woodpanel.html">
+                                <img src="/images/pvc-panel-light-oak.jpg" alt="Light Oak Slat PVC Panel">
+                                <div class="hardware-item-caption">
+                                    <h4>Light Oak Slat Panel</h4>
+                                    <p>PVC Panel / Wood Look</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        
+                        <div class="hardware-item-card" data-category="hardware" data-style="brushed-brass">
+                            <a href="/material-detail-orb-knob.html">
+                                <img src="/images/hardware-orb-knob-bb-large.jpg" alt="Orb Spherical Knob - Brushed Brass">
+                                <div class="hardware-item-caption">
+                                    <h4>Orb Spherical Knob</h4>
+                                    <p>Hardware / Brushed Brass</p>
+                                </div>
+                            </a>
+                        </div>
+
+                         
+                         <div class="hardware-item-card" data-category="tile" data-style="marble-look">
+                             <a href="/material-detail-marble-tile.html">
+                                <img src="/images/tile-calacatta-gold-large.jpg" alt="Calacatta Gold Porcelain Tile">
+                                <div class="hardware-item-caption">
+                                    <h4>Calacatta Gold Tile</h4>
+                                    <p>Tile / Marble Look</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        
+                        <div class="hardware-item-card" data-category="wallpaper" data-style="floral">
+                            <a href="/material-detail-floral-wallpaper.html">
+                                <img src="/images/wallpaper-vintage-floral-large.jpg" alt="Vintage Floral Wallpaper - Muted Tones">
+                                <div class="hardware-item-caption">
+                                    <h4>Vintage Floral Paper</h4>
+                                    <p>Wallpaper / Floral</p>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <p>© 2023 Neelkanth Interio. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">i</a>
+                    <a href="#" aria-label="LinkedIn">l</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

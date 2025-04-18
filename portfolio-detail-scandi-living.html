@@ -16,7 +16,7 @@
             <div class="container header-container">
                 <a href="/" class="logo"><img src="/logo.png" alt="Neelkanth Interio Logo" class="logo-image"></a>
                 <nav class="main-navigation">
-                     <ul><li><a href="/">Home</a></li><li><a href="/about.html">About</a></li><li><a href="/services.html">Services</a></li><li><a href="/portfolio.html">Portfolio</a></li><li><a href="/design-tools.html">Design Tools</a></li><li><a href="/contact.html">Contact</a></li></ul>
+                     <ul><li><a href="/">Home</a></li><li><a href="/about.html">About</a></li><li><a href="/services.html">Services</a></li><li><a href="/portfolio.html">Portfolio</a></li><li><a href="/design-tools.html">Design Tools</a></li><li><a href="/materials-library.html">Hardware</a></li><li><a href="/contact.html">Contact</a></li></ul>
                 </nav>
                 <button class="mobile-menu-button" aria-label="Toggle Menu" aria-expanded="false"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
             </div>
@@ -68,7 +68,7 @@
                     <div class="project-sidebar" data-aos="fade-left" data-aos-delay="200">
                         <h4>Project Info</h4>
                         <p><strong>Status:</strong> Completed 2023</p>
-                        <p><strong>Budget Range:</strong> $$$</p>
+                        <p><strong>Budget Range:</strong> ₹₹₹</p>
                         <p><strong>Lead Designer:</strong> Ritu Gupta</p>
                         <hr style="margin: 20px 0;">
                         <h4>Seeking simplicity and comfort?</h4>
@@ -96,7 +96,7 @@
                      
                     <a href="/portfolio-detail-boho-bedroom.html" class="nav-link prev">← Previous Project</a>
                     <a href="/portfolio.html" class="nav-link all">View All Projects</a>
-                    <a href="/portfolio-detail-modern-apt.html" class="nav-link next">Next Project →</a> {/* Example: loop back or link elsewhere */}
+                    <a href="/portfolio-detail-modern-apt.html" class="nav-link next">Next Project →</a> 
                 </div>
             </section>
         </main>
@@ -106,6 +106,17 @@
             <div class="container"><p>© 2023 Neelkanth Interio. All rights reserved.</p><div class="social-links"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">i</a><a href="#" aria-label="LinkedIn">l</a></div></div>
         </footer>
     </div>
+    <!-- Lightbox Structure (Outside #app or main is fine) -->
+    <div id="lightbox" class="lightbox-overlay">
+        <button class="lightbox-close" aria-label="Close lightbox">×</button>
+        <button class="lightbox-prev" aria-label="Previous image">❮</button>
+        <button class="lightbox-next" aria-label="Next image">❯</button>
+        <div class="lightbox-content">
+            <img src="" alt="Lightbox image" id="lightbox-image">
+            <div id="lightbox-caption"></div>
+        </div>
+    </div>
+    <!-- End Lightbox Structure -->
     <script type="module" src="/src/main.js"></script>
 </body>
 </html>

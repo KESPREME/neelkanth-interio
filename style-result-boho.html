@@ -4,46 +4,130 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
     <title>Your Style: Boho Chic - Neelkanth Interio</title>
+
 </head>
 <body>
     <div id="app">
-         <!-- =========== HEADER =========== -->
-         <header class="site-header">
+
+        <!-- =========== HEADER (Consistent across pages) =========== -->
+        <header class="site-header">
             <div class="container header-container">
-                <a href="/" class="logo"><img src="/logo.png" alt="Neelkanth Interio Logo" class="logo-image"></a>
+                <a href="/" class="logo">
+                    <img src="/logo.png" alt="Neelkanth Interio Logo" class="logo-image">
+                </a>
                 <nav class="main-navigation">
-                    <ul><li><a href="/">Home</a></li><li><a href="/about.html">About</a></li><li><a href="/services.html">Services</a></li><li><a href="/portfolio.html">Portfolio</a></li><li><a href="/design-tools.html">Design Tools</a></li><li><a href="/contact.html">Contact</a></li></ul>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/portfolio.html">Portfolio</a></li>
+                        <li><a href="/design-tools.html">Design Tools</a></li>
+                        <li><a href="/materials-library.html">Hardware</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
                 </nav>
-                <button class="mobile-menu-button" aria-label="Toggle Menu" aria-expanded="false"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+                <button class="mobile-menu-button" aria-label="Toggle Menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
             </div>
         </header>
 
+        <!-- =========== MAIN CONTENT (Unique to Style Result Page) =========== -->
         <main id="main-content">
-            <section class="page-header-section" style="background-color: var(--neutral-light); padding: 40px 0; text-align: center;">
-                <div class="container"><h1>Your Style Result</h1></div>
-            </section>
-            <section class="quiz-result-section">
-                <div class="container" style="max-width: 800px; text-align: center;">
-                    <h2 style="color: var(--primary-color); font-size: 2rem;">You lean towards a Boho Chic Style!</h2>
-                    <img src="/images/result-boho.jpg" alt="Boho Chic Style Example" style="width: 100%; max-width: 500px; margin: 20px auto; border-radius: 8px;">
-                    <p style="font-size: 1.1rem; line-height: 1.7;">Boho Chic is relaxed, eclectic, and embraces a mix of patterns, textures, and natural elements. Think vintage finds, lots of plants, macrame, rattan, layered rugs, and warm, earthy tones. It's a personal and comfortable style that tells a story.</p>
-                    <h3>Next Steps:</h3>
-                    <p>Explore projects in our portfolio that showcase the Boho Chic style:</p>
-                    <a href="/portfolio.html?filter=boho" class="button" style="margin: 5px;">View Boho Projects</a>
-                    <p style="margin-top: 20px;">Ready to discuss how we can bring a Boho Chic vibe to your space?</p>
-                    <a href="/contact.html" class="button" style="margin: 5px;">Book a Consultation</a>
+
+             <section class="page-header-section" style="background-color: var(--neutral-light); padding: 40px 0; text-align: center;" data-aos="fade-in">
+                <div class="container">
+                    <p style="color: var(--secondary-color); font-weight: bold; margin-bottom: 5px;">Style Quiz Result</p>
+                    <h1>Your Style Profile: Boho Chic</h1>
+                    <p style="font-size: 1.1rem; color: #555;">Embrace eclectic charm, natural textures, and a free-spirited vibe.</p>
                 </div>
             </section>
+
+            <!-- Style Description Section -->
+            <section class="style-description-section">
+                <div class="container style-result-grid">
+                    <div class="style-text" data-aos="fade-right">
+                        <h2>Understanding Boho Chic Style</h2>
+                        <p>Boho Chic, short for Bohemian Chic, is all about expressing individuality through a relaxed, unconventional, and artistic approach. It embraces a mix of patterns, textures, and colors, often drawing inspiration from global travels and nature.</p>
+                        <p>Comfort is paramount, with layered textiles like rugs, throws, and cushions playing a significant role. Natural materials such as rattan, wood, and jute are common, often paired with vintage finds, handmade items, and plenty of plants to create a warm, inviting, and lived-in atmosphere.</p>
+                        <h4>Key Characteristics:</h4>
+                        <ul>
+                            <li>Eclectic mix of patterns and colors</li>
+                            <li>Emphasis on natural materials (wood, rattan, jute)</li>
+                            <li>Layered textiles (rugs, throws, pillows)</li>
+                            <li>Abundance of plants and greenery</li>
+                            <li>Vintage or globally-inspired furniture and decor</li>
+                            <li>Comfortable, relaxed, and unconventional vibe</li>
+                        </ul>
+                    </div>
+                    <div class="style-image" data-aos="fade-left" data-aos-delay="100">
+                        <img src="/images/portfolio-boho-bedroom-hero.jpg" alt="Example of a Boho Chic interior design style">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Relevant Portfolio Projects -->
+            <section class="relevant-portfolio-section" style="background-color: var(--neutral-light);" data-aos="fade-up">
+                 <div class="container">
+                    <h2 class="text-center">Explore Boho Chic Projects</h2>
+                    <p class="text-center" style="max-width: 600px; margin: -20px auto 40px auto; color: #666;">See how we've captured the free-spirited essence of Boho Chic.</p>
+                     <div class="portfolio-items-grid related-projects-grid">
+                         <div class="portfolio-item-card" data-aos="fade-up" data-aos-delay="100">
+                            <a href="/portfolio-detail-boho-bedroom.html">
+                                <img src="/images/portfolio-boho-bedroom.jpg" alt="Boho Chic Bedroom">
+                                <div class="portfolio-item-caption">
+                                    <h4>Boho Chic Bedroom</h4>
+                                    <p>Bedroom / Boho Chic</p>
+                                </div>
+                            </a>
+                        </div>
+                         <div class="portfolio-item-card" data-aos="fade-up" data-aos-delay="200">
+                             <a href="#">
+                                <img src="/images/portfolio-boho-bedroom-img4.jpg" alt="Eclectic Living Room">
+                                <div class="portfolio-item-caption">
+                                    <h4>Eclectic Living Space</h4>
+                                    <p>Living Room / Boho Chic</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="text-center" style="margin-top: 40px;">
+                        <a href="/portfolio.html?filter=boho" class="button">View All Boho Projects</a>
+                    </div>
+                 </div>
+            </section>
+
+            <!-- Next Steps / CTA -->
+            <section class="next-steps-cta" data-aos="zoom-in">
+                 <div class="container text-center">
+                    <h2>Ready to Embrace Your Inner Bohemian?</h2>
+                    <p>Let's chat about layering textures, patterns, and personality to create your unique Boho Chic sanctuary.</p>
+                    <a href="/contact.html?style=Boho+Chic" class="button cta-button">Schedule a Consultation</a>
+                 </div>
+            </section>
+
         </main>
 
-        <!-- =========== FOOTER =========== -->
         <footer class="site-footer">
-            <div class="container"><p>© 2023 Neelkanth Interio. All rights reserved.</p><div class="social-links"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">i</a><a href="#" aria-label="LinkedIn">l</a></div></div>
+            <div class="container">
+                <p>© 2023 Neelkanth Interio. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">i</a>
+                    <a href="#" aria-label="LinkedIn">l</a>
+                </div>
+            </div>
         </footer>
+
     </div>
     <script type="module" src="/src/main.js"></script>
 </body>

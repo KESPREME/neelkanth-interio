@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Light Oak Slat Panel - Materials Library - Neelkanth Interio</title>
+</head>
+<body>
+    <div id="app">
+        <header class="site-header">
+             <div class="container header-container">
+                <a href="/" class="logo">
+                    <img src="/logo.png" alt="Neelkanth Interio Logo" class="logo-image">
+                </a>
+                <nav class="main-navigation">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/portfolio.html">Portfolio</a></li>
+                        <li><a href="/design-tools.html">Design Tools</a></li>
+                        <li><a href="/materials-library.html">Materials</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle Menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <main id="main-content">
+             <section class="page-header-section minimal-header" style="background-color: var(--neutral-light); padding: 25px 0;">
+                <div class="container">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/materials-library.html">Materials Library</a></li>
+                            <li class="breadcrumb-item"><a href="/materials-library.html">PVC Panels</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Light Oak Slat Panel</li>
+                        </ol>
+                    </nav>
+                </div>
+            </section>
+
+            <section class="hardware-detail-section material-detail-panel">
+                <div class="container hardware-detail-grid">
+                    <div class="hardware-image-gallery" data-aos="fade-in">
+                        <div class="main-image-container">
+                            <img id="mainHardwareImage" src="/images/pvc-panel-light-oak-large.jpg" alt="Light Oak Slat PVC Panel - Main View">
+                        </div>
+                        <div class="thumbnail-images">
+                            <img src="/images/pvc-panel-light-oak-thumb1.jpg" alt="Light Oak Panel Thumbnail 1" class="active" onclick="document.getElementById('mainHardwareImage').src='/images/pvc-panel-light-oak-thumb1.jpg'">
+                            <img src="/images/pvc-panel-light-oak-thumb2.jpg" alt="Light Oak Panel Thumbnail 2 - Detail" onclick="document.getElementById('mainHardwareImage').src='/images/pvc-panel-light-oak-thumb2.jpg'">
+                            <img src="/images/pvc-panel-light-oak-thumb3.jpg" alt="Light Oak Panel Thumbnail 3 - Installation" onclick="document.getElementById('mainHardwareImage').src='/images/pvc-panel-light-oak-thumb3.jpg'">
+                        </div>
+                    </div>
+                    <div class="hardware-info-details" data-aos="fade-left" data-aos-delay="100">
+                        <h1>Light Oak Slat Panel</h1>
+                        <p class="hardware-meta">Type: PVC Panel | Style: Wood Look</p>
+                        <div class="hardware-description">
+                            <p>Achieve the warm, textured look of natural wood slats with the durability and ease of maintenance of PVC. These light oak panels add vertical interest and contemporary style to walls and ceilings.</p>
+                            <p>Ideal for feature walls, media consoles, or adding architectural detail in both residential and commercial spaces. Water-resistant properties make them suitable for various environments.</p>
+                        </div>
+                        <div class="hardware-specifications">
+                            <h4>Specifications:</h4>
+                            <ul>
+                                <li><strong>Material:</strong> High-Density PVC</li>
+                                <li><strong>Finish:</strong> Realistic Light Oak Texture</li>
+                                <li><strong>Panel Width:</strong> 120mm</li>
+                                <li><strong>Panel Height:</strong> 2900mm</li>
+                                <li><strong>Panel Depth:</strong> 12mm</li>
+                                <li><strong>Installation:</strong> Adhesive or Mechanical Fixings</li>
+                                <li><strong>Features:</strong> Water-Resistant, Low Maintenance</li>
+                            </ul>
+                        </div>
+                        <div class="hardware-cta">
+                            <h4>Considering Panel Accents?</h4>
+                            <p>Discuss how PVC slat panels can add dimension and style to your project.</p>
+                            <a href="/contact.html?subject=Inquiry%20about%20Light%20Oak%20Slat%20Panel" class="button">Contact a Designer</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+             <div class="container">
+                <p>© 2023 Neelkanth Interio. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">f</a> <a href="#" aria-label="Instagram">i</a> <a href="#" aria-label="LinkedIn">l</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const thumbnails = document.querySelectorAll('.thumbnail-images img');
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', () => {
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    thumb.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

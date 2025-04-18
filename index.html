@@ -4,18 +4,13 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-
     <title>Neelkanth Interio - Designing Your Dream Space</title>
 </head>
   <body>
     <div id="app">
-
-        <!-- =========== HEADER (with Mobile Button) =========== -->
         <header class="site-header">
             <div class="container header-container">
                 <a href="/" class="logo">
@@ -28,10 +23,10 @@
                         <li><a href="/services.html">Services</a></li>
                         <li><a href="/portfolio.html">Portfolio</a></li>
                         <li><a href="/design-tools.html">Design Tools</a></li>
+                        <li><a href="/materials-library.html">Materials</a></li>
                         <li><a href="/contact.html">Contact</a></li>
                     </ul>
                 </nav>
-                
                 <button class="mobile-menu-button" aria-label="Toggle Menu" aria-expanded="false">
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
@@ -39,33 +34,20 @@
                 </button>
             </div>
         </header>
-
         <main id="main-content">
-            <!-- ================== -->
-            <!-- Hero Section -->
-            <!-- ================== -->
             <section class="hero-section">
                 <div class="container hero-content">
                     <h1 data-aos="fade-down" data-aos-delay="100">Neelkanth Interio: Where Vision Meets Design</h1>
                     <p data-aos="fade-up" data-aos-delay="200">Transforming spaces into personalized sanctuaries of style and comfort.</p>
-                    
                     <a href="/contact.html" class="button hero-button" data-aos="zoom-in" data-aos-delay="300">Start Your Design Journey</a>
                 </div>
             </section>
-
-            <!-- ================== -->
-            <!-- Introduction Section -->
-            <!-- ================== -->
             <section class="intro-section" data-aos="fade-up">
                 <div class="container">
                     <h2>Crafting Inspired Interiors</h2>
                     <p class="intro-text">At Neelkanth Interio, we believe your home should be a reflection of you. We blend creativity, quality craftsmanship, and personalized service to bring your dream space to life.</p>
                 </div>
             </section>
-
-            <!-- ================== -->
-            <!-- Featured Services Section -->
-            <!-- ================== -->
             <section class="services-preview-section" data-aos="fade-up">
                 <div class="container">
                     <h2>Our Expertise</h2>
@@ -91,30 +73,26 @@
                     </div>
                 </div>
             </section>
-
-            <!-- ================== -->
-            <!-- Portfolio Sneak Peek Section -->
-            <!-- ================== -->
             <section class="portfolio-preview-section" data-aos="fade-up">
                 <div class="container">
                     <h2>Recent Projects</h2>
                     <div class="portfolio-grid">
                         <a href="/portfolio-detail-modern-apt.html" class="portfolio-card" data-aos="zoom-in" data-aos-delay="100">
-                            <img src="/images/portfolio-placeholder-1.jpg" alt="Modern Apartment project preview">
+                            <img src="/images/portfolio-modern-apt.jpg" alt="Modern Apartment project preview">
                             <div class="portfolio-card-overlay">
                                 <h4>Modern Apartment</h4>
                                 <p>View Project</p>
                             </div>
                         </a>
                          <a href="/portfolio-detail-luxury-villa.html" class="portfolio-card" data-aos="zoom-in" data-aos-delay="200">
-                            <img src="/images/portfolio-placeholder-2.jpg" alt="Luxury Villa project preview">
+                            <img src="/images/portfolio-luxury-villa.jpg" alt="Luxury Villa project preview">
                             <div class="portfolio-card-overlay">
                                 <h4>Luxury Villa</h4>
                                 <p>View Project</p>
                             </div>
                         </a>
                          <a href="/portfolio-detail-minimalist-studio.html" class="portfolio-card" data-aos="zoom-in" data-aos-delay="300">
-                            <img src="/images/portfolio-placeholder-3.jpg" alt="Minimalist Studio project preview">
+                            <img src="/images/portfolio-minimalist-studio.jpg" alt="Minimalist Studio project preview">
                             <div class="portfolio-card-overlay">
                                 <h4>Minimalist Studio</h4>
                                 <p>View Project</p>
@@ -128,8 +106,67 @@
             </section>
 
             <!-- ================== -->
-            <!-- Testimonials Section -->
+            <!-- Materials Showcase Section -->
             <!-- ================== -->
+            <section class="materials-preview-section" style="background-color: var(--neutral-light);" data-aos="fade-up">
+                <div class="container">
+                    <h2 class="text-center">Curated Materials & Finishes</h2>
+                    <p class="text-center" style="max-width: 650px; margin: -20px auto 40px auto; color: #666;">Discover the details that define a space. Explore selections from our hardware, wallpaper, and panel library.</p>
+                     
+                    <div class="hardware-items-grid materials-preview-grid">
+
+                        
+                        <div class="hardware-item-card" data-aos="fade-up" data-aos-delay="100">
+                            <a href="/material-detail-vertical-garden.html">
+                                <img src="/images/panel-vertical-garden-large.jpg" alt="Mixed Foliage Vertical Garden Panel">
+                                <div class="hardware-item-caption">
+                                    <h4>Vertical Garden Panel</h4>
+                                    <p>Panel / Greenery</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        
+                        <div class="hardware-item-card" data-aos="fade-up" data-aos-delay="200">
+                             <a href="/material-detail-geo-wallpaper.html">
+                                <img src="/images/wallpaper-geo-lines-large.jpg" alt="Geometric Lines Wallpaper - Gold/Navy">
+                                <div class="hardware-item-caption">
+                                    <h4>Geo Lines Wallpaper</h4>
+                                    <p>Wallpaper / Geometric</p>
+                                </div>
+                            </a>
+                        </div>
+
+                         
+                        <div class="hardware-item-card" data-aos="fade-up" data-aos-delay="300">
+                             <a href="/material-detail-pvc-woodpanel.html">
+                                <img src="/images/pvc-panel-light-oak.jpg" alt="Light Oak Slat PVC Panel">
+                                <div class="hardware-item-caption">
+                                    <h4>Light Oak Slat Panel</h4>
+                                    <p>PVC Panel / Wood Look</p>
+                                </div>
+                            </a>
+                        </div>
+
+                         
+                         <div class="hardware-item-card" data-aos="fade-up" data-aos-delay="400">
+                             <a href="/material-detail-marble-tile.html">
+                                <img src="/images/tile-calacatta-gold-large.jpg" alt="Calacatta Gold Porcelain Tile">
+                                <div class="hardware-item-caption">
+                                    <h4>Calacatta Gold Tile</h4>
+                                    <p>Tile / Marble Look</p>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                     <div class="text-center" style="margin-top: 40px;" data-aos="fade-up">
+                        <a href="/materials-library.html" class="button">Explore Materials Library</a>
+                    </div>
+                </div>
+            </section>
+
+
             <section class="testimonials-section" data-aos="fade-up">
                 <div class="container">
                     <h2>What Our Clients Say</h2>
@@ -140,25 +177,17 @@
                             </blockquote>
                             <cite>– Semal & Sankalp Varshney</cite>
                         </div>
-                         
                     </div>
                 </div>
             </section>
-
-            <!-- ================== -->
-            <!-- Call to Action Section -->
-            <!-- ================== -->
             <section class="cta-section" data-aos="zoom-in">
                 <div class="container text-center">
                     <h2>Ready to Start Your Transformation?</h2>
                     <p>Let's discuss your vision and how we can bring it to life.</p>
-                    
                     <a href="/contact.html" class="button cta-button">Book a Consultation</a>
                 </div>
             </section>
         </main>
-
-        <!-- =========== FOOTER (Same as other pages) =========== -->
         <footer class="site-footer">
             <div class="container">
                 <p>© 2023 Neelkanth Interio. All rights reserved.</p>
@@ -169,9 +198,7 @@
                 </div>
             </div>
         </footer>
-
-    </div> <!-- End of #app -->
-
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

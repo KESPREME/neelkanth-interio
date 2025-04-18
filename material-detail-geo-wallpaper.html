@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Geo Lines Wallpaper - Materials Library - Neelkanth Interio</title>
+</head>
+<body>
+    <div id="app">
+        <header class="site-header">
+            <div class="container header-container">
+                <a href="/" class="logo">
+                    <img src="/logo.png" alt="Neelkanth Interio Logo" class="logo-image">
+                </a>
+                <nav class="main-navigation">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/portfolio.html">Portfolio</a></li>
+                        <li><a href="/design-tools.html">Design Tools</a></li>
+                        <li><a href="/materials-library.html">Materials</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle Menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <main id="main-content">
+             <section class="page-header-section minimal-header" style="background-color: var(--neutral-light); padding: 25px 0;">
+                <div class="container">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/materials-library.html">Materials Library</a></li>
+                            <li class="breadcrumb-item"><a href="/materials-library.html">Wallpaper</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Geo Lines Wallpaper</li>
+                        </ol>
+                    </nav>
+                </div>
+            </section>
+
+            <section class="hardware-detail-section material-detail-wallpaper">
+                <div class="container hardware-detail-grid">
+                    <div class="hardware-image-gallery" data-aos="fade-in">
+                        <div class="main-image-container">
+                            <img id="mainHardwareImage" src="/images/wallpaper-geo-lines-large.jpg" alt="Geo Lines Wallpaper - Main View">
+                        </div>
+                        <div class="thumbnail-images">
+                            <img src="/images/wallpaper-geo-lines-thumb1.jpg" alt="Geo Lines Wallpaper Thumbnail 1" class="active" onclick="document.getElementById('mainHardwareImage').src='/images/wallpaper-geo-lines-thumb1.jpg'">
+                            <img src="/images/wallpaper-geo-lines-thumb2.jpg" alt="Geo Lines Wallpaper Thumbnail 2 - Detail" onclick="document.getElementById('mainHardwareImage').src='/images/wallpaper-geo-lines-thumb2.jpg'">
+                            <img src="/images/wallpaper-geo-lines-thumb3.jpg" alt="Geo Lines Wallpaper Thumbnail 3 - Room" onclick="document.getElementById('mainHardwareImage').src='/images/wallpaper-geo-lines-thumb3.jpg'">
+                        </div>
+                    </div>
+                    <div class="hardware-info-details" data-aos="fade-left" data-aos-delay="100">
+                        <h1>Geo Lines Wallpaper</h1>
+                        <p class="hardware-meta">Pattern: Geometric | Colors: Gold, Navy, Cream</p>
+                        <div class="hardware-description">
+                            <p>Add a touch of Art Deco sophistication with the Geo Lines wallpaper. Striking metallic gold lines intersect against a deep navy background, creating a dynamic and luxurious feature wall.</p>
+                            <p>This non-woven wallpaper offers easy application and removal, suitable for living rooms, dining areas, or bedrooms seeking a modern, graphic statement.</p>
+                        </div>
+                        <div class="hardware-specifications">
+                            <h4>Specifications:</h4>
+                            <ul>
+                                <li><strong>Material:</strong> Non-Woven Paper</li>
+                                <li><strong>Finish:</strong> Matte with Metallic Lines</li>
+                                <li><strong>Pattern Repeat:</strong> 64cm Straight Match</li>
+                                <li><strong>Roll Width:</strong> 52cm</li>
+                                <li><strong>Roll Length:</strong> 10m</li>
+                                <li><strong>Application:</strong> Paste the Wall</li>
+                            </ul>
+                        </div>
+                        <div class="hardware-cta">
+                            <h4>Interested in this pattern?</h4>
+                            <p>Let us know if you'd like to see this wallpaper incorporated into your design proposal.</p>
+                            <a href="/contact.html?subject=Inquiry%20about%20Geo%20Lines%20Wallpaper" class="button">Contact a Designer</a>
+                        </div>
+                         <div class="related-links" style="margin-top: 30px;">
+                             <p><strong>See Also:</strong> <a href="/material-detail-floral-wallpaper.html">Vintage Floral Paper</a></p>
+                         </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <p>© 2023 Neelkanth Interio. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">f</a> <a href="#" aria-label="Instagram">i</a> <a href="#" aria-label="LinkedIn">l</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const thumbnails = document.querySelectorAll('.thumbnail-images img');
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', () => {
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    thumb.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

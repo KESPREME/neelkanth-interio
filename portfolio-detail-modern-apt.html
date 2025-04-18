@@ -28,7 +28,8 @@
                         <li><a href="/about.html">About</a></li>
                         <li><a href="/services.html">Services</a></li>
                         <li><a href="/portfolio.html">Portfolio</a></li>
-                        <li><a href="#design-tools">Design Tools</a></li>
+                        <li><a href="/design-tools.html">Design Tools</a></li>
+                        <li><a href="/materials-library.html">Hardware</a></li>
                         <li><a href="/contact.html">Contact</a></li>
                     </ul>
                 </nav>
@@ -87,7 +88,7 @@
                     <div class="project-sidebar" data-aos="fade-left" data-aos-delay="200">
                         <h4>Project Info</h4>
                         <p><strong>Status:</strong> Completed 2023</p>
-                        <p><strong>Budget Range:</strong> $$$</p>
+                        <p><strong>Budget Range:</strong> ₹₹₹</p>
                         <p><strong>Lead Designer:</strong>Ritu Gupta</p>
                         <hr style="margin: 20px 0;">
                         <h4>Interested in a similar project?</h4>
@@ -147,6 +148,17 @@
         </footer>
 
     </div> <!-- End of #app -->
+    <!-- Lightbox Structure (Outside #app or main is fine) -->
+    <div id="lightbox" class="lightbox-overlay">
+        <button class="lightbox-close" aria-label="Close lightbox">×</button>
+        <button class="lightbox-prev" aria-label="Previous image">❮</button>
+        <button class="lightbox-next" aria-label="Next image">❯</button>
+        <div class="lightbox-content">
+            <img src="" alt="Lightbox image" id="lightbox-image">
+            <div id="lightbox-caption"></div>
+        </div>
+    </div>
+    <!-- End Lightbox Structure -->
 
     <script type="module" src="/src/main.js"></script>
 </body>
