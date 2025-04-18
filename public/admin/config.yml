@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway # Use Netlify Identity's Git Gateway
+  name: git-gateway
+  branch: main # Use Netlify Identity's Git Gateway
 
 media_folder: "public/images"
 public_folder: "/images"
