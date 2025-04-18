@@ -4,31 +4,30 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager (Admin)</title>
-  <!-- Load updated Decap CMS CSS (using decap-cms) -->
+  <!-- Load necessary CSS -->
   <link rel="stylesheet" href="https://unpkg.com/decap-cms-app@^3.1.0/dist/main.css" />
-  <!-- Load Netlify Identity Widget *first* if needed for login button handling -->
+  <!-- Load Netlify Identity Widget -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <!-- Decap CMS will mount here. Ensure this div exists -->
+  <!-- Add the root element for Decap CMS to mount onto -->
   <div id="nc-root"></div>
 
-  <!-- Load updated Decap CMS script -->
+  <!-- Load the main Decap CMS App script -->
   <script src="https://unpkg.com/decap-cms-app@^3.1.0/dist/decap-cms-app.js"></script>
 
-  <!-- Initialization and login handling (optional, Decap might handle automatically now) -->
-  <script>
-      // Basic check to ensure identity functions are available if needed later
+  <!-- Minimal inline script for identity handling (optional but can help) -->
+   <script>
       if (window.netlifyIdentity) {
-          window.netlifyIdentity.on('init', user => {
-              if (!user) {
-                  window.netlifyIdentity.on('login', () => {
-                      // Could potentially redirect, but CMS usually handles this
-                      // document.location.href = '/admin/';
-                  });
-              }
-          });
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
       }
-  </script>
+   </script>
+
 </body>
 </html>
