@@ -4,19 +4,13 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-
     <title>Project Estimator - Neelkanth Interio</title>
-
 </head>
 <body>
     <div id="app">
-
-        <!-- =========== HEADER (Consistent across pages) =========== -->
         <header class="site-header">
             <div class="container header-container">
                 <a href="/" class="logo">
@@ -29,7 +23,7 @@
                         <li><a href="/services.html">Services</a></li>
                         <li><a href="/portfolio.html">Portfolio</a></li>
                         <li><a href="/design-tools.html">Design Tools</a></li>
-                        <li><a href="/materials-library.html">Hardware</a></li>
+                        <li><a href="/materials-library.html">Materials</a></li>
                         <li><a href="/contact.html">Contact</a></li>
                     </ul>
                 </nav>
@@ -41,9 +35,7 @@
             </div>
         </header>
 
-        <!-- =========== MAIN CONTENT (Unique to Project Estimator Page) =========== -->
         <main id="main-content">
-
              <section class="page-header-section" style="background-color: var(--neutral-light); padding: 40px 0; text-align: center;" data-aos="fade-in">
                 <div class="container">
                     <h1>Project Budget Estimator</h1>
@@ -52,11 +44,9 @@
                 </div>
             </section>
 
-            <!-- Estimator Form Section -->
             <section class="estimator-form-section">
                 <div class="container">
                     <form id="estimator-form" class="estimator-form" name="estimator" method="POST" data-netlify="true" data-aos="fade-up">
-
                         <input type="hidden" name="form-name" value="estimator" />
 
                         <h3>Your Contact Information</h3>
@@ -133,10 +123,9 @@
                             <button type="submit" class="button estimator-submit-button">Get Estimated Range & Submit Inquiry</button>
                         </div>
 
-
                         <div id="estimator-result" class="estimator-result" style="margin-top: 30px; padding: 20px; background-color: var(--neutral-light); border-radius: 8px; text-align: center; display: none;">
                             <h4>Preliminary Estimated Budget Range:</h4>
-                            <p style="font-size: 1.5rem; font-weight: bold; color: var(--primary-color);" id="estimated-range-display">₹XX,XXX - ₹XXX,XXX</p>
+                            <p style="font-size: 1.5rem; font-weight: bold; color: var(--primary-color);" id="estimated-range-display">₹X,XXX - ₹XX,XXX</p>
                             <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">This is a preliminary estimate only. Your details have also been submitted, and we will contact you for a full consultation to provide an accurate quote.</p>
                         </div>
                          <div id="estimator-form-status" class="form-status" style="text-align: center;"></div>
@@ -144,10 +133,8 @@
                     </form>
                 </div>
             </section>
-
         </main>
 
-        <!-- =========== FOOTER (Consistent across pages) =========== -->
         <footer class="site-footer">
             <div class="container">
                 <p>© 2023 Neelkanth Interio. All rights reserved.</p>
@@ -158,10 +145,7 @@
                 </div>
             </div>
         </footer>
-
-    </div> <!-- End of #app -->
-
+    </div>
     <script type="module" src="/src/main.js"></script>
-
 </body>
 </html>

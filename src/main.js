@@ -218,116 +218,111 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Inside document.addEventListener('DOMContentLoaded', () => { ... });
 
-  // === Project Estimator Logic ===
-  const estimatorForm = document.getElementById('estimator-form');
-  const resultDisplayContainer = document.getElementById('estimator-result');
-  const rangeDisplayElement = document.getElementById('estimated-range-display');
-  const formStatusElement = document.getElementById('estimator-form-status'); // For potential messages
-
-  if (estimatorForm && resultDisplayContainer && rangeDisplayElement) {
-    console.log("Initializing Project Estimator");
-
-    estimatorForm.addEventListener('submit', function(event) {
-      
-      formStatusElement.textContent = 'Calculating...'; // Indicate activity
-      formStatusElement.className = 'form-status'; // Reset classes
-
-      // --- 1. Get Form Values ---
-      const roomType = document.getElementById('room-type')?.value;
-      const roomSize = document.getElementById('room-size')?.value;
-      const projectScope = document.getElementById('project-scope')?.value;
-      const qualityLevel = document.getElementById('quality-level')?.value;
-
-      // Basic validation - ensure all fields are selected
-      if (!roomType || !roomSize || !projectScope || !qualityLevel) {
-        formStatusElement.textContent = 'Please fill out all project detail fields.';
-        formStatusElement.className = 'form-status error';
-        // Hide result container if shown previously
-        resultDisplayContainer.style.display = 'none';
-        return; // Stop processing
-      }
-
-      // --- 2. Simplified Calculation Logic ---
-      // IMPORTANT: These are *example* multipliers. Adjust significantly based on your business!
-      let baseCost = 1000; // A starting point
-      let sizeMultiplier = 1;
-      let scopeMultiplier = 1;
-      let qualityMultiplier = 1;
-      let roomMultiplier = 1;
-
-      // Size Multipliers
-      switch (roomSize) {
-        case 'small': sizeMultiplier = 0.8; break;
-        case 'medium': sizeMultiplier = 1.0; break;
-        case 'large': sizeMultiplier = 1.5; break;
-        case 'xlarge': sizeMultiplier = 2.2; break;
-        case 'multi-room': sizeMultiplier = 4.0; break; // Significantly more for multi-room
-      }
-
-      // Scope Multipliers
-      switch (projectScope) {
-        case 'decor': scopeMultiplier = 1.0; break;
-        case 'minor-reno': scopeMultiplier = 2.5; break;
-        case 'major-reno': scopeMultiplier = 5.0; break;
-        case 'new-build': scopeMultiplier = 7.0; break;
-      }
-
-      // Quality Multipliers
-      switch (qualityLevel) {
-        case 'standard': qualityMultiplier = 1.0; break;
-        case 'premium': qualityMultiplier = 1.8; break;
-        case 'luxury': qualityMultiplier = 3.0; break;
-      }
-
-       // Room Type Base Adjustment (e.g., Kitchens/Baths cost more inherently)
-       switch (roomType) {
-         case 'kitchen': roomMultiplier = 1.8; baseCost = 2000; break;
-         case 'bathroom': roomMultiplier = 1.5; baseCost = 1500; break;
-         case 'full-home': roomMultiplier = 1.2; baseCost = 3000; break; // Base higher for full home
-         // other rooms use default
+   // === Project Estimator Logic ===
+   const estimatorForm = document.getElementById('estimator-form');
+   const resultDisplayContainer = document.getElementById('estimator-result');
+   const rangeDisplayElement = document.getElementById('estimated-range-display');
+   const formStatusElement = document.getElementById('estimator-form-status');
+ 
+   // Check if all necessary elements exist on the page
+   if (estimatorForm && resultDisplayContainer && rangeDisplayElement && formStatusElement) {
+     console.log("Initializing Project Estimator");
+ 
+     estimatorForm.addEventListener('submit', function(event) {
+       // IMPORTANT: Do NOT prevent default if using Netlify forms or standard submission
+       // event.preventDefault();
+ 
+       console.log("Estimator form submitted, calculating..."); // Log entry
+       formStatusElement.textContent = 'Calculating...';
+       formStatusElement.className = 'form-status'; // Reset status styling
+ 
+       // --- 1. Get Form Values ---
+       const roomType = document.getElementById('room-type')?.value;
+       const roomSize = document.getElementById('room-size')?.value;
+       const projectScope = document.getElementById('project-scope')?.value;
+       const qualityLevel = document.getElementById('quality-level')?.value;
+ 
+       // --- 2. Basic Validation ---
+       if (!roomType || !roomSize || !projectScope || !qualityLevel) {
+         console.error("Estimator validation failed: Missing fields.");
+         formStatusElement.textContent = 'Please fill out all project detail fields.';
+         formStatusElement.className = 'form-status error';
+         resultDisplayContainer.style.display = 'none';
+         event.preventDefault(); // Prevent submission if validation fails
+         return; // Stop processing
        }
-
-       // Combine multipliers - This is highly simplified!
-       const calculatedLow = baseCost * roomMultiplier * sizeMultiplier * scopeMultiplier * qualityMultiplier;
-       const calculatedHigh = calculatedLow * 1.6; // Example: High range is 60% more
-
-       // --- 3. Format and Display Result ---
-       // Basic currency formatting
-       const formatter = new Intl.NumberFormat('en-US', {
-           style: 'currency',
-           currency: 'INR', // Change currency code if needed
-           minimumFractionDigits: 0, // Remove cents for cleaner estimate
-           maximumFractionDigits: 0,
-       });
-
-       const displayRange = `${formatter.format(calculatedLow)} - ${formatter.format(calculatedHigh)}`;
-       rangeDisplayElement.textContent = displayRange;
-       resultDisplayContainer.style.display = 'block'; // Show the result container
-       formStatusElement.textContent = ''; // Clear "Calculating..." message
-
-       console.log("Estimate Calculated:", displayRange);
-       formStatusElement.textContent = 'Submitting your inquiry...'; // Update status
-
-      // --- 4. Handle Actual Form Submission (if needed) ---
-      // If using Netlify Forms or similar that rely on standard submission:
-      // Option A: Submit after a short delay (simplest)
-      // setTimeout(() => {
-      //     console.log("Submitting form data...");
-      //     estimatorForm.submit(); // Submit the form normally after showing estimate
-      // }, 500); // Short delay
-
-      // Option B: Use Fetch API (AJAX) for background submission (more complex, better UX)
-      // This prevents page reload and allows for better status messages.
-      // See Fetch API documentation - would require more setup.
-      // For now, we'll rely on the default action after the estimate shows (or use Option A).
-      // If NOT using Netlify/Formspree, you'd handle the AJAX submission here.
-
-
-    }); // End of submit listener
-  } else if (document.getElementById('estimator-form')) {
-      console.warn("Estimator result display elements not found. Estimator calculation disabled.");
-  }
-  // === End Project Estimator Logic ===
+        console.log("Estimator Values:", { roomType, roomSize, projectScope, qualityLevel }); // Log values
+ 
+       // --- 3. Simplified Calculation Logic ---
+       // Adjust these base costs and multipliers for INR and your business!
+       let baseCost = 80000; // Example base in INR
+       let sizeMultiplier = 1;
+       let scopeMultiplier = 1;
+       let qualityMultiplier = 1;
+       let roomMultiplier = 1;
+ 
+       switch (roomSize) {
+         case 'small': sizeMultiplier = 0.8; break;
+         case 'medium': sizeMultiplier = 1.0; break;
+         case 'large': sizeMultiplier = 1.5; break;
+         case 'xlarge': sizeMultiplier = 2.2; break;
+         case 'multi-room': sizeMultiplier = 4.0; break;
+       }
+ 
+       switch (projectScope) {
+         case 'decor': scopeMultiplier = 1.0; break;
+         case 'minor-reno': scopeMultiplier = 2.5; break;
+         case 'major-reno': scopeMultiplier = 5.0; break;
+         case 'new-build': scopeMultiplier = 7.0; break;
+       }
+ 
+       switch (qualityLevel) {
+         case 'standard': qualityMultiplier = 1.0; break;
+         case 'premium': qualityMultiplier = 1.8; break;
+         case 'luxury': qualityMultiplier = 3.0; break;
+       }
+ 
+        switch (roomType) {
+          case 'kitchen': roomMultiplier = 1.8; baseCost = 150000; break; // INR base cost examples
+          case 'bathroom': roomMultiplier = 1.5; baseCost = 120000; break;
+          case 'full-home': roomMultiplier = 1.2; baseCost = 300000; break;
+        }
+ 
+        const calculatedLow = baseCost * roomMultiplier * sizeMultiplier * scopeMultiplier * qualityMultiplier;
+        const calculatedHigh = calculatedLow * 1.6;
+ 
+        console.log("Calculated Range (Raw):", calculatedLow, calculatedHigh); // Log calculation
+ 
+        // --- 4. Format and Display Result (INR) ---
+        try {
+             const formatter = new Intl.NumberFormat('en-IN', { // Use 'en-IN' locale for India
+                 style: 'currency',
+                 currency: 'INR', // Set currency to INR
+                 minimumFractionDigits: 0,
+                 maximumFractionDigits: 0,
+             });
+ 
+             const displayRange = `${formatter.format(calculatedLow)} - ${formatter.format(calculatedHigh)}`;
+             rangeDisplayElement.textContent = displayRange;
+             resultDisplayContainer.style.display = 'block';
+             formStatusElement.textContent = 'Estimate generated. Submitting inquiry...'; // Update status before potential submission
+             formStatusElement.className = 'form-status success';
+             console.log("Estimate Displayed:", displayRange);
+         } catch(formatError) {
+              console.error("Error formatting currency:", formatError);
+              formStatusElement.textContent = 'Error displaying estimate.';
+              formStatusElement.className = 'form-status error';
+              resultDisplayContainer.style.display = 'none';
+              event.preventDefault(); // Prevent submission if display fails
+         }
+ 
+       // Form will now submit automatically if event.preventDefault() is not called above
+ 
+     });
+   } else if (document.getElementById('estimator-form')) {
+       console.warn("Estimator elements not fully found. Calculation/Display disabled.");
+   }
+   // === End Project Estimator Logic ===
 
 
 // ... (rest of the code like AOS init, etc.) ...
