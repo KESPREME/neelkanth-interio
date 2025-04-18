@@ -4,20 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager (Admin)</title>
-  <!-- ONLY Load the Decap CMS CSS -->
+  <!-- Load the Decap CMS CSS -->
   <link rel="stylesheet" href="https://unpkg.com/decap-cms@^3.0.0/dist/cms.css" />
 </head>
 <body>
-  <!-- NO #app div -->
   <!-- ONLY Load the Decap CMS script -->
+  <!-- It should automatically look for /admin/config.yml -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/cms.js"></script>
-  <!-- The explicit CMS.init can sometimes help, leave it for now -->
-  <script>
-    CMS.init({
-      config: {
-        load_config_file: '/admin/config.yml',
-      },
-    });
-  </script>
 </body>
 </html>
