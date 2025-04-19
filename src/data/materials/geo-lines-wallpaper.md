@@ -1,9 +1,12 @@
 ---
+detailPage: /material-detail-geo-wallpaper.html
 title: Geo Lines Wallpaper
 category: wallpaper
 style: geometric
 image: /images/wallpaper-geo-lines-large.jpg
-detailPage: /material-detail-geo-wallpaper.html
+description: >-
+  
+  Art Deco inspired wallpaper with metallic gold lines on navy. Creates a dynamic and luxurious feature wall. Easy paste-the-wall application.
 specs:
   - name: Material
     value: Non-Woven Paper
