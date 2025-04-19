@@ -40,5 +40,12 @@
     "style": "floral",
     "image": "/images/wallpaper-vintage-floral-large.jpg",
     "detailPage": "/material-detail-vintage-floral-paper.html"
+  },
+  {
+    "title": "Wall Panel",
+    "category": "panel",
+    "style": "other",
+    "image": "/images/wall-panel.jpg",
+    "detailPage": "/material-detail-wall-panel.html"
   }
 ]
