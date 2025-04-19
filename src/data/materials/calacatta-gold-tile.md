@@ -1,9 +1,12 @@
 ---
+detailPage: /material-detail-marble-tile.html
 title: Calacatta Gold Tile
 category: tile
 style: marble-look
 image: /images/tile-calacatta-gold-large.jpg
-detailPage: /material-detail-marble-tile.html
+description: >-
+  
+  Capture the luxurious beauty of Italian Calacatta Gold marble with the practicality and durability of porcelain. This large-format tile features dramatic grey veining accented with warm golden hues on a luminous white background. Ideal for elegant floors and walls.
 specs:
   - name: Material
     value: Porcelain
