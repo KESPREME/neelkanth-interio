@@ -1,9 +1,12 @@
 ---
+detailPage: /material-detail-pvc-woodpanel.html
 title: Light Oak Slat Panel
 category: pvc-panel
 style: wood-look
 image: /images/pvc-panel-light-oak.jpg
-detailPage: /material-detail-pvc-woodpanel.html
+description: >-
+  
+  Achieve the warm, textured look of natural wood slats with the durability and ease of maintenance of PVC. Ideal for feature walls.
 specs:
   - name: Material
     value: High-Density PVC
