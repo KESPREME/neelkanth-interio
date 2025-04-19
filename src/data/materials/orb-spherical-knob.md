@@ -1,9 +1,12 @@
 ---
+detailPage: /material-detail-orb-knob.html
 title: Orb Spherical Knob
 category: hardware
 style: brushed-brass
 image: /images/hardware-orb-knob-bb-large.jpg
-detailPage: /material-detail-orb-knob.html
+description: >-
+  
+  Simple and elegant solid brass spherical knob. Complements various design styles, from mid-century modern to contemporary.
 specs:
   - name: Material
     value: Solid Brass
