@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Title will be replaced -->
+    <title>Calacatta Gold Tile - Materials Library - Neelkanth Interio</title>
+    <link rel="stylesheet" href="/src/style.css"> <!-- Link CSS relative to source for build -->
+</head>
+<body>
+    <div id="app">
+        <!-- Header - Assume it's standard, could also be templated if needed -->
+        <header class="site-header">
+             <div class="container header-container"> <a href="/" class="logo"> <img src="/logo.png" alt="Neelkanth Interio Logo" class="logo-image"> </a> <nav class="main-navigation"> <ul> <li><a href="/">Home</a></li> <li><a href="/about.html">About</a></li> <li><a href="/services.html">Services</a></li> <li><a href="/portfolio.html">Portfolio</a></li> <li><a href="/design-tools.html">Design Tools</a></li> <li><a href="/materials-library.html">Materials</a></li> <li><a href="/contact.html">Contact</a></li> </ul> </nav> <button class="mobile-menu-button" aria-label="Toggle Menu" aria-expanded="false"> <span class="hamburger-line"></span> <span class="hamburger-line"></span> <span class="hamburger-line"></span> </button> </div>
+        </header>
+
+        <main id="main-content">
+             <section class="page-header-section minimal-header" style="background-color: var(--neutral-light); padding: 25px 0;">
+                <div class="container">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/materials-library.html">Materials Library</a></li>
+                            <li class="breadcrumb-item"><a href="/materials-library.html?filter=tile">Tile</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Calacatta Gold Tile</li>
+                        </ol>
+                    </nav>
+                </div>
+            </section>
+
+            <section class="hardware-detail-section material-detail-tile">
+                <div class="container hardware-detail-grid">
+                    <div class="hardware-image-gallery">
+                        <div class="main-image-container">
+                            <img id="mainHardwareImage" src="/images/tile-calacatta-gold-large.jpg" alt="Calacatta Gold Tile - Main View">
+                        </div>
+                        <div class="thumbnail-images">
+                            <img src="/images/tile-calacatta-gold-thumb1.jpg" alt="Calacatta Gold Tile - Main View" data-large-src="/images/tile-calacatta-gold-thumb1.jpg" class="active">
+<img src="/images/tile-calacatta-gold-thumb2.jpg" alt="Calacatta Gold Tile - Veining Detail" data-large-src="/images/tile-calacatta-gold-thumb2.jpg" class="">
+<img src="/images/tile-calacatta-gold-thumb3.jpg" alt="Calacatta Gold Tile - Bathroom" data-large-src="/images/tile-calacatta-gold-thumb3.jpg" class="">
+                        </div>
+                    </div>
+                    <div class="hardware-info-details">
+                        <h1>Calacatta Gold Tile</h1>
+                        <p class="hardware-meta">Category: Tile | Style: Marble Look</p>
+                        <div class="hardware-description">
+                             <p>Capture the luxurious beauty of Italian Calacatta Gold marble with the practicality and durability of porcelain. This large-format tile features dramatic grey veining accented with warm golden hues on a luminous white background. Ideal for elegant floors and walls.</p>
+
+                        </div>
+                        <div class="hardware-specifications">
+                            <h4>Specifications:</h4>
+                            <ul>
+                                <li><strong>Material:</strong> Porcelain</li>
+<li><strong>Finish:</strong> Polished</li>
+<li><strong>Size:</strong> 600mm x 1200mm</li>
+<li><strong>Thickness:</strong> 10mm</li>
+<li><strong>Edge:</strong> Rectified</li>
+                            </ul>
+                        </div>
+                        <div class="hardware-cta">
+                            <h4>Interested in this piece?</h4>
+                            <p>Discuss incorporating the Calacatta Gold Tile into your project with our design team.</p>
+                            <a href="/contact.html?subject=Inquiry%20about%20Calacatta%20Gold%20Tile" class="button">Contact a Designer</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer - Assume it's standard -->
+         <footer class="site-footer"> <div class="container"> <p>© 2023 Neelkanth Interio. All rights reserved.</p> <div class="social-links"> <a href="#" aria-label="Facebook">f</a> <a href="#" aria-label="Instagram">i</a> <a href="#" aria-label="LinkedIn">l</a> </div> </div> </footer>
+    </div>
+     <!-- No need for main.js link here if Vite bundles it based on CSS import -->
+     <!-- But add thumbnail script if needed -->
+     <script>
+         document.addEventListener('DOMContentLoaded', () => {
+             const thumbnails = document.querySelectorAll('.thumbnail-images img');
+             const mainImage = document.getElementById('mainHardwareImage');
+             if(mainImage && thumbnails.length > 0) {
+                 thumbnails.forEach(thumb => {
+                     thumb.addEventListener('click', () => {
+                         const newSrc = thumb.getAttribute('data-large-src'); // Use data attribute for large src
+                         if(newSrc) mainImage.src = newSrc;
+                         thumbnails.forEach(t => t.classList.remove('active'));
+                         thumb.classList.add('active');
+                     });
+                 });
+             }
+         });
+     </script>
+</body>
+</html>
