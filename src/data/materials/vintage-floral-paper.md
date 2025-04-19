@@ -1,9 +1,12 @@
 ---
+detailPage: /material-detail-floral-wallpaper.html
 title: Vintage Floral Paper
 category: wallpaper
 style: floral
 image: /images/wallpaper-vintage-floral-large.jpg
-detailPage: /material-detail-floral-wallpaper.html
+description: >-
+  
+  Bring romantic, vintage charm to your space with this elegant floral wallpaper. Featuring delicate blooms in muted tones on a soft cream background, it creates a calming and sophisticated atmosphere.
 specs:
   - name: Material
     value: Paper (Paste the Paper)
