@@ -26,7 +26,7 @@ const __dirname = path.dirname(__filename);
 const materialsDataDir = path.join(__dirname, 'src', 'data', 'materials');
 const templateFile = path.join(__dirname, 'src', 'templates', 'material-detail-template.html');
 const materialsJsonOutput = path.join(__dirname, 'public', 'materials.json');
-const outputHtmlDir = __dirname; // Generate detail HTML files in ROOT
+const outputHtmlDir = __dirname;
 const allMaterialsForJson = [];
 
 console.log(`--- Content Build Script ---`);
@@ -52,22 +52,32 @@ try {
         const filePath = path.join(materialsDataDir, file);
         if (fs.statSync(filePath).isFile()) {
             let materialData = null;
-            let descriptionHtml = '<p><em>No description provided.</em></p>'; // Default value
+            let descriptionHtml = '<p><em>No description provided.</em></p>';
 
             if (file.endsWith('.md')) {
                 console.log(`--- Processing Markdown file: ${file} ---`);
                 const fileContent = fs.readFileSync(filePath, 'utf-8');
                 try {
-                    const { data, content } = matter(fileContent); // Parse frontmatter and content
-                    console.log(`[${file}] Raw Markdown Content:\n---\n${content}\n---`);
+                    const { data, content } = matter(fileContent); // data = frontmatter, content = body
+                    console.log(`[${file}] Frontmatter Data:`, data);
+                    console.log(`[${file}] Body Content:\n---\n${content}\n---`);
 
-                    // Convert the main markdown content to HTML
-                    if (content && content.trim() !== '') {
-                        descriptionHtml = marked(content);
-                        console.log(`[${file}] Converted Description HTML:\n---\n${descriptionHtml}\n---`);
-                    } else {
-                         console.log(`[${file}] No Markdown content found for description.`);
+                    // *** UPDATED DESCRIPTION LOGIC ***
+                    // Prioritize the 'description' field in frontmatter if it exists and is not empty
+                    if (data.description && data.description.trim() !== '') {
+                        descriptionHtml = marked(data.description); // Convert frontmatter description
+                        console.log(`[${file}] Using description from FRONTMATTER.`);
                     }
+                    // Otherwise, use the main body content if it exists
+                    else if (content && content.trim() !== '') {
+                        descriptionHtml = marked(content);
+                        console.log(`[${file}] Using description from BODY content.`);
+                    } else {
+                         console.log(`[${file}] No description found in frontmatter or body.`);
+                    }
+                    console.log(`[${file}] Final Description HTML:\n---\n${descriptionHtml}\n---`);
+                    // *** END UPDATED DESCRIPTION LOGIC ***
+
 
                     const slug = slugify(data.title || path.basename(file, '.md'));
                     materialData = {
@@ -77,12 +87,11 @@ try {
                         style: data.style || 'default',
                         image: data.image || null,
                         mainDetailImage: data.mainDetailImage || data.image || null,
-                        description: descriptionHtml, // Assign the PARSED HTML here
+                        description: descriptionHtml, // Assign final parsed HTML
                         specs: data.specs || [],
                         gallery: data.gallery || [],
                         detailPageUrl: `/material-detail-${slug}.html`
                     };
-                    console.log(`[${file}] Parsed Frontmatter Data:`, data);
 
                 } catch (parseError) {
                      console.error(`Error parsing Markdown file ${file}:`, parseError);
@@ -91,7 +100,6 @@ try {
             // Add JSON file processing here if needed
 
             if (materialData) {
-                // Add data needed for materials.json (grid view)
                  allMaterialsForJson.push({
                      title: materialData.title,
                      category: materialData.category,
@@ -100,26 +108,22 @@ try {
                      detailPage: materialData.detailPageUrl
                  });
 
-                // Generate detail page HTML
                 let detailHtml = templateHtml;
                 const specsHtml = materialData.specs.map(spec => `<li><strong>${spec.name || ''}:</strong> ${spec.value || ''}</li>`).join('\n');
                 const thumbnailsHtml = materialData.gallery.map((img, index) =>
                     `<img src="${img.image || ''}" alt="${img.alt || 'Thumbnail'}" data-large-src="${img.image || ''}" class="${index === 0 ? 'active' : ''}">`
                 ).join('\n');
 
-                // Perform replacements
                 detailHtml = detailHtml.replace(/{{TITLE}}/g, materialData.title);
                 detailHtml = detailHtml.replace(/{{CATEGORY}}/g, materialData.category);
                 detailHtml = detailHtml.replace(/{{CATEGORY_TITLE}}/g, titleCase(materialData.category));
                 detailHtml = detailHtml.replace(/{{STYLE_TITLE}}/g, titleCase(materialData.style));
                 detailHtml = detailHtml.replace(/{{MAIN_IMAGE_SRC}}/g, materialData.mainDetailImage);
-                // ** CRITICAL STEP: Replace the description placeholder **
-                detailHtml = detailHtml.replace('{{DESCRIPTION_HTML}}', materialData.description); // Use simple replace if placeholder isn't complex
+                detailHtml = detailHtml.replace('{{DESCRIPTION_HTML}}', materialData.description);
                 detailHtml = detailHtml.replace(/{{SPECS_HTML}}/g, specsHtml);
                 detailHtml = detailHtml.replace(/{{THUMBNAILS_HTML}}/g, thumbnailsHtml);
                 detailHtml = detailHtml.replace(/{{TITLE_URL_ENCODED}}/g, encodeURIComponent(materialData.title));
 
-                // Write the generated HTML file to the ROOT directory
                 const outputFilePath = path.join(outputHtmlDir, `material-detail-${materialData.slug}.html`);
                 fs.writeFileSync(outputFilePath, detailHtml);
                 console.log(` -> Generated detail page: ${outputFilePath}`);
@@ -129,7 +133,6 @@ try {
         }
     });
 
-    // Write the combined JSON for the library page grid view to public/
     fs.writeFileSync(materialsJsonOutput, JSON.stringify(allMaterialsForJson, null, 2));
     console.log(`Successfully generated ${materialsJsonOutput} with ${allMaterialsForJson.length} material items.`);
 
